@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style class="note" version="1.0" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
+  <info>
+    <title>Musikwissenschaftliches Arbeiten Gardner/Springfed</title>
+    <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
+    <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
+    <updated>2023-10-12T22:02:18+00:00</updated>	
+	<updated>2023-11-08</updated>
+  </info>
+ <locale xml:lang="de">
+   	<terms>
+     		<term name="no-date">o. J.</term>
+		<term name="edition-prefix">hrsg. von</term>
+		<term name="in">in: </term>
+		<term name="access-term">abgerufen am</term>
+   	</terms>
+ </locale>
+  <macro name="title">
+    <choose>
+      <if type="book">
+        <text variable="title" font-style="italic"/>
+      </if>
+      <else>
+        <text value="»"/>
+        <text variable="title"/>
+        <text value="«"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="author">
+	<choose>
+		<if variable="author">
+			<names variable="author"/>
+		</if>
+		<else>
+			<choose>
+				<if variable="editor">
+					<names variable="editor"/>
+					<text value=" (Hrsg.)"/>
+				</if>
+			</choose>
+		</else>
+	</choose>  
+</macro>
+	<macro name="editor">
+		<text value="hrsg. von "/>
+		<names variable="editor">
+			<name and="symbol"/>
+		</names>	
+	</macro>
+	<macro name="book-journal-title">
+		<text term="in"/>
+		<text variable="container-title" font-style="italic"/>
+	</macro>
+	<macro name="issued-year">
+		<choose>		
+			<if variable="issued">
+				<date variable="issued" form="text" date-part="year"/>
+			</if>
+			<else>
+				<text term="no-date" form="short"/>
+			</else>
+		</choose>
+	</macro>
+	<macro name="page-count">
+		<group delimiter=" ">
+			<text term="page" form="short"/>
+			<text variable="page"/>
+			</group>
+	</macro>
+	<macro name="edition">
+		<choose>
+			<if type="chapter book">
+					<group delimiter=", ">
+						<text macro="book-journal-title"/>
+						<text macro="editor"/>
+					
+						<group delimiter=" ">
+      							<text variable="publisher-place"/>
+							<text macro="issued-year"/>
+						</group>
+					</group>
+			</if>
+			<if type="article-journal">	
+				<group delimiter=" ">
+					<text macro="book-journal-title"/>
+					<group delimiter="/">
+						<text variable="volume"/>
+						<text variable="issue"/>
+					</group>
+					<text macro="issued-year" prefix="(" suffix=")"/>
+				</group>
+			</if>
+		</choose>		
+	</macro>
+	<macro name="access">
+		<group delimiter=" ">
+			<text variable="URL" suffix=","/>
+			<text term="access-term"/>
+			<date variable="accessed" form="text"/>
+	
+		</group>
+	</macro>
+  <citation>
+    <layout suffix="." delimiter="; ">
+	<group delimiter=", ">      
+		<text macro="author"/>
+      		<text macro="title"/>
+		<text macro="edition"/>
+		<text macro="access"/>
+		<text macro="page-count"/>	
+	</group>
+    </layout>
+  </citation>
+  <bibliography>
+	<sort>
+    		<key variable="author"/>
+    		<key variable="issued"/>
+  	</sort>
+	<layout suffix=".">
+		
+    	</layout>
+  </bibliography>
+</style>
