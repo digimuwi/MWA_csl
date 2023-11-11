@@ -4,7 +4,7 @@
     <title>Musikwissenschaftliches Arbeiten Gardner/Springfed</title>
     <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
     <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
-    <updated>2023-10-12T22:02:18+00:00</updated>	
+    
 	<updated>2023-11-08</updated>
   </info>
  <locale xml:lang="de">
@@ -13,6 +13,10 @@
 		<term name="edition-prefix">hrsg. von</term>
 		<term name="in">in: </term>
 		<term name="access-term">abgerufen am</term>
+		<term name="editor">
+			<single> (Hrsg.)</single>
+       			<multiple> (Hrsgg.)</multiple>
+		</term>
    	</terms>
  </locale>
   <macro name="title">
@@ -21,9 +25,14 @@
         <text variable="title" font-style="italic"/>
       </if>
       <else>
-        <text value="»"/>
-        <text variable="title"/>
-        <text value="«"/>
+        	<choose>
+			<if type="entry-dictionary">
+        			<text prefix="Art. »" suffix="«" variable="title"/>
+			</if>
+			<else>
+				<text prefix="»" suffix="«" variable="title"/>
+			</else>
+		</choose>
       </else>
     </choose>
   </macro>
@@ -36,7 +45,7 @@
 			<choose>
 				<if variable="editor">
 					<names variable="editor"/>
-					<text value=" (Hrsg.)"/>
+					<text term="editor"/>
 				</if>
 			</choose>
 		</else>
@@ -49,8 +58,7 @@
 		</names>	
 	</macro>
 	<macro name="book-journal-title">
-		<text term="in"/>
-		<text variable="container-title" font-style="italic"/>
+		<text prefix="in: " variable="container-title" font-style="italic"/>
 	</macro>
 	<macro name="issued-year">
 		<choose>		
@@ -70,7 +78,7 @@
 	</macro>
 	<macro name="edition">
 		<choose>
-			<if type="chapter book">
+			<if type="chapter book entry-dictionary">
 					<group delimiter=", ">
 						<text macro="book-journal-title"/>
 						<text macro="editor"/>
@@ -101,15 +109,24 @@
 	
 		</group>
 	</macro>
+	<macro name="serie">
+		<group prefix="(" suffix=")" delimiter=", ">
+			<text variable="collection-title" />
+			<text variable="collection-number"/>
+		</group>
+	</macro>
   <citation>
     <layout suffix="." delimiter="; ">
-	<group delimiter=", ">      
-		<text macro="author"/>
-      		<text macro="title"/>
-		<text macro="edition"/>
-		<text macro="access"/>
-		<text macro="page-count"/>	
-	</group>
+		<group delimiter=" ">
+			<group delimiter=", ">      
+				<text macro="author"/>
+      				<text macro="title"/>
+				<text macro="edition"/>
+				<text macro="access"/>
+				<text macro="page-count"/>	
+			</group>
+			<text macro="serie"/>
+		</group>
     </layout>
   </citation>
   <bibliography>
@@ -118,7 +135,16 @@
     		<key variable="issued"/>
   	</sort>
 	<layout suffix=".">
-		
+		<group delimiter=" ">
+			<group delimiter=", ">      
+				<text macro="author"/>
+      				<text macro="title"/>
+				<text macro="edition"/>
+				<text macro="access"/>
+				<text macro="page-count"/>	
+			</group>
+			<text macro="serie"/>
+		</group>
     	</layout>
   </bibliography>
 </style>
