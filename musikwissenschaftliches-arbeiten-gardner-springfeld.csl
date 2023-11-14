@@ -5,7 +5,7 @@
     <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
     <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
     
-	<updated>2023-11-08</updated>
+	<updated>2023-11-14</updated>
   </info>
  <locale xml:lang="de">
    	<terms>
@@ -51,6 +51,25 @@
 		</else>
 	</choose>  
 </macro>
+<macro name="author-bibliography">
+	<choose>
+		<if variable="author">
+			<names variable="author">
+				<name name-as-sort-order="first"/>
+			</names>
+		</if>
+		<else>
+			<choose>
+				<if variable="editor">
+					<names variable="editor">
+						<name name-as-sort-order="first"/>
+					</names>
+					<text term="editor"/>
+				</if>
+			</choose>
+		</else>
+	</choose>  
+</macro>
 	<macro name="editor">
 		<text value="hrsg. von "/>
 		<names variable="editor">
@@ -74,7 +93,7 @@
 		<group delimiter=" ">
 			<text term="page" form="short"/>
 			<text variable="page"/>
-			</group>
+		</group>
 	</macro>
 	<macro name="edition">
 		<choose>
@@ -119,13 +138,20 @@
     <layout suffix="." delimiter="; ">
 		<group delimiter=" ">
 			<group delimiter=", ">      
-				<text macro="author"/>
-      				<text macro="title"/>
-				<text macro="edition"/>
-				<text macro="access"/>
-				<text macro="page-count"/>	
+				<choose>
+					<if position="first">
+						<text macro="author"/>
+      						<text macro="title"/>
+								<text macro="edition"/>
+								<text macro="access"/>
+						<text macro="page-count"/>
+						<text macro="serie"/>
+					</if>
+					<if position="ibid">
+						<text term="ibid"/>
+					</if>
+				</choose>
 			</group>
-			<text macro="serie"/>
 		</group>
     </layout>
   </citation>
@@ -137,7 +163,7 @@
 	<layout suffix=".">
 		<group delimiter=" ">
 			<group delimiter=", ">      
-				<text macro="author"/>
+				<text macro="author-bibliography"/>
       				<text macro="title"/>
 				<text macro="edition"/>
 				<text macro="access"/>
