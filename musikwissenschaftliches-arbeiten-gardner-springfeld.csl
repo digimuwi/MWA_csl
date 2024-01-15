@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style class="note" version="1.0" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
   <info>
-    <title>Musikwissenschaftliches Arbeiten Gardner/Springfed</title>
+    <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
     <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
     <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
     
@@ -125,13 +125,35 @@
 			<text variable="URL" suffix=","/>
 			<text term="access-term"/>
 			<date variable="accessed" form="text"/>
-	
 		</group>
 	</macro>
 	<macro name="serie">
 		<group prefix="(" suffix=")" delimiter=", ">
 			<text variable="collection-title" />
 			<text variable="collection-number"/>
+		</group>
+	</macro>
+	<macro name="short-title">
+		<choose>
+      			<if type="book">
+        			<text variable="title-short" font-style="italic"/>
+      			</if>
+      			<else>
+        			<choose>
+					<if type="entry-dictionary">
+        					<text prefix="Art. »" suffix="«" variable="title-short"/>
+					</if>
+					<else>
+						<text prefix="»" suffix="«" variable="title-short"/>
+					</else>
+				</choose>
+      			</else>
+    		</choose>
+	</macro>
+	<macro name="locator-page">
+		<group delimiter=" ">
+			<label variable="locator" form="short"/>
+			<number variable="locator"/>
 		</group>
 	</macro>
   <citation>
@@ -146,9 +168,21 @@
 								<text macro="access"/>
 						<text macro="page-count"/>
 						<text macro="serie"/>
+						<text macro="locator-page"/>
 					</if>
 					<if position="ibid">
 						<text term="ibid"/>
+						<text macro="locator-page"/>
+					</if>
+					<if position="subsequent">
+						<text macro="author"/>
+						<if variable="title-short">
+							<text macro="short-title"/>	
+						</if>
+						<else>
+							<text macro="title"/>
+						</else>
+						<text macro="locator-page"/>
 					</if>
 				</choose>
 			</group>
