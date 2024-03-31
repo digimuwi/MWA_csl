@@ -5,7 +5,7 @@
     <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
     <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
     
-	<updated>2024-02-25</updated>
+	<updated>2024-03-31</updated>
   </info>
  <locale xml:lang="de">
    	<terms>
@@ -175,9 +175,15 @@
       						<text macro="title"/>
 								<text macro="edition"/>
 								<text macro="access"/>
-						<text macro="page-count"/>
-						<text macro="serie"/>
-						<text macro="locator-page"/>
+								<text macro="serie"/>
+						<choose>
+							<if variable="locator">
+								<text macro="locator-page"/>
+							</if>
+							<else>
+								<text macro="page-count"/>
+							</else>
+						</choose>
 					</if>
 					<if position="ibid">
 						<text term="ibid"/>
