@@ -191,12 +191,14 @@
 					</if>
 					<if position="subsequent">
 						<text macro="author"/>
-						<if variable="title-short">
-							<text macro="short-title"/>	
-						</if>
-						<else>
-							<text macro="title"/>
-						</else>
+						<choose>
+							<if variable="title-short">
+								<text macro="short-title"/>	
+							</if>
+							<else>
+								<text macro="title"/>
+							</else>
+						</choose>
 						<text macro="locator-page"/>
 					</if>
 				</choose>
