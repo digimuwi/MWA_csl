@@ -97,7 +97,7 @@
 	</macro>
 	<macro name="edition">
 		<choose>
-			<if type="chapter book entry-dictionary">
+			<if type="chapter book entry-dictionary entry-encyclopedia">
 					<group delimiter=", ">
 						<text macro="book-journal-title"/>
 						<text macro="editor"/>
