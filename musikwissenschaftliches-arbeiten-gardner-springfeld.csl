@@ -1,227 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style class="note" version="1.0" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
-  <info>
-    <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
-    <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
-    <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
-    
-	<updated>2024-03-31</updated>
-  </info>
- <locale xml:lang="de">
-   	<terms>
-     		<term name="no-date">o. J.</term>
-		<term name="edition-prefix">hrsg. von</term>
-		<term name="in">in: </term>
-		<term name="access-term">abgerufen am</term>
-		<term name="editor">
-			<single> (Hrsg.)</single>
-       			<multiple> (Hrsgg.)</multiple>
-		</term>
-   	</terms>
- </locale>
-  <macro name="title">
-    <choose>
-      <if type="book">
-        <text variable="title" font-style="italic"/>
-      </if>
-      <else>
-        	<choose>
-			<if type="entry-dictionary">
-        			<text prefix="Art. »" suffix="«" variable="title"/>
-			</if>
-			<else>
-				<text prefix="»" suffix="«" variable="title"/>
-			</else>
-		</choose>
-      </else>
-    </choose>
-  </macro>
-  <macro name="author">
-	<choose>
-		<if variable="author">
-			<names variable="author"/>
-		</if>
-		<else>
-			<choose>
-				<if variable="editor">
-					<names variable="editor"/>
-					<text term="editor"/>
-				</if>
-			</choose>
-		</else>
-	</choose>  
-</macro>
-<macro name="author-bibliography">
-	<choose>
-		<if variable="author">
-			<names variable="author">
-				<name name-as-sort-order="first" demote-non-dropping-particle="display-and-sort"/>
-			</names>
-		</if>
-		<else>
-			<choose>
-				<if variable="editor">
-					<names variable="editor">
-						<name name-as-sort-order="first"/>
-					</names>
-					<text term="editor"/>
-				</if>
-			</choose>
-		</else>
-	</choose>  
-</macro>
-	<macro name="editor">
-		<text value="hrsg. von "/>
-		<names variable="editor">
-			<name and="symbol"/>
-		</names>	
-	</macro>
-	<macro name="book-journal-title">
-		<text prefix="in: " variable="container-title" font-style="italic"/>
-	</macro>
-	<macro name="issued-year">
-		<choose>		
-			<if variable="issued">
-				<date variable="issued" form="text" date-part="year"/>
-			</if>
-			<else>
-				<text term="no-date" form="short"/>
-			</else>
-		</choose>
-	</macro>
-	<macro name="page-count">
-		<group delimiter=" ">
-			<text term="page" form="short"/>
-			<text variable="page"/>
-		</group>
-	</macro>
-	<macro name="edition">
-		<choose>
-			<if type="chapter book entry-dictionary entry-encyclopedia">
-					<group delimiter=", ">
-						<text macro="book-journal-title"/>
-						<text macro="editor"/>
-						<text prefix="Bd. " variable="volume"/>
-						<group delimiter=" ">
-      							<text variable="publisher-place"/>
-							<text macro="issued-year"/>
-						</group>
-					</group>
-			</if>
-			<if type="thesis">
-				<group delimiter=", ">
-					<group delimiter=" ">	
-						<text variable="genre"/>
-						<text variable="publisher-place"/>
-					</group>
-					<text macro="issued-year"/>
-				</group>
-			</if>
-			<if type="article-journal">	
-				<group delimiter=" ">
-					<text macro="book-journal-title"/>
-					<group delimiter="/">
-						<text variable="volume"/>
-						<text variable="issue"/>
-					</group>
-					<text macro="issued-year" prefix="(" suffix=")"/>
-				</group>
-			</if>
-		</choose>		
-	</macro>
-	<macro name="access">
-		<group delimiter=" ">
-			<text variable="URL" suffix=","/>
-			<text term="access-term"/>
-			<date variable="accessed" form="text"/>
-		</group>
-	</macro>
-	<macro name="serie">
-		<group prefix="(" suffix=")" delimiter=", ">
-			<text variable="collection-title" />
-			<text variable="collection-number"/>
-		</group>
-	</macro>
-	<macro name="short-title">
-		<choose>
-      			<if type="book">
-        			<text variable="title-short" font-style="italic"/>
-      			</if>
-      			<else>
-        			<choose>
-					<if type="entry-dictionary">
-        					<text prefix="Art. »" suffix="«" variable="title-short"/>
-					</if>
-					<else>
-						<text prefix="»" suffix="«" variable="title-short"/>
-					</else>
-				</choose>
-      			</else>
-    		</choose>
-	</macro>
-	<macro name="locator-page">
-		<group delimiter=" ">
-			<label variable="locator" form="short"/>
-			<number variable="locator"/>
-		</group>
-	</macro>
-  <citation>
-    <layout suffix="." delimiter="; ">
-		<group delimiter=" ">
-			<group delimiter=", ">      
-				<choose>
-					<if position="first">
-						<text macro="author"/>
-      						<text macro="title"/>
-								<text macro="edition"/>
-								<text macro="access"/>
-								<text macro="serie"/>
-						<choose>
-							<if variable="locator">
-								<text macro="locator-page"/>
-							</if>
-							<else>
-								<text macro="page-count"/>
-							</else>
-						</choose>
-					</if>
-					<if position="ibid">
-						<text term="ibid"/>
-						<text macro="locator-page"/>
-					</if>
-					<if position="subsequent">
-						<text macro="author"/>
-						<choose>
-							<if variable="title-short">
-								<text macro="short-title"/>	
-							</if>
-							<else>
-								<text macro="title"/>
-							</else>
-						</choose>
-						<text macro="locator-page"/>
-					</if>
-				</choose>
-			</group>
-		</group>
-    </layout>
-  </citation>
-  <bibliography>
-	<sort>
-    		<key variable="author"/>
-    		<key variable="issued"/>
-  	</sort>
-	<layout suffix=".">
-		<group delimiter=" ">
-			<group delimiter=", ">      
-				<text macro="author-bibliography"/>
-      				<text macro="title"/>
-				<text macro="edition"/>
-				<text macro="access"/>
-				<text macro="page-count"/>	
-			</group>
-			<text macro="serie"/>
-		</group>
-    	</layout>
-  </bibliography>
+    <info>
+        <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
+        <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
+        <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
+        <updated>2024-11-18T18:00:00+01:00</updated>
+    </info>
+    <locale xml:lang="de">
+        <terms>
+            <term name="no-date">o. J.</term>
+            <term name="edition-prefix">hrsg. von</term>
+            <term name="in">in: </term>
+            <term name="accessed-term">abgerufen am</term>
+            <term name="editor">
+                <single> (Hrsg.)</single>
+                <multiple> (Hrsgg.)</multiple>
+            </term>
+        </terms>
+    </locale>
+    <macro name="title">
+        <choose>
+            <if type="book">
+                <text variable="title" font-style="italic"/>
+            </if>
+            <else>
+                <choose>
+                    <if type="entry-dictionary">
+                        <text prefix="Art. »" suffix="«" variable="title"/>
+                    </if>
+                    <else>
+                        <text prefix="»" suffix="«" variable="title"/>
+                    </else>
+                </choose>
+            </else>
+        </choose>
+    </macro>
+    <macro name="author">
+        <choose>
+            <if variable="author">
+                <names variable="author"/>
+            </if>
+            <else>
+                <choose>
+                    <if variable="editor">
+                        <names variable="editor"/>
+                        <text term="editor"/>
+                    </if>
+                </choose>
+            </else>
+        </choose>  
+    </macro>
+    <macro name="author-bibliography">
+        <choose>
+            <if variable="author">
+                <names variable="author">
+                    <name name-as-sort-order="first" demote-non-dropping-particle="display-and-sort"/>
+                </names>
+            </if>
+            <else>
+                <choose>
+                    <if variable="editor">
+                        <names variable="editor">
+                            <name name-as-sort-order="first"/>
+                        </names>
+                        <text term="editor"/>
+                    </if>
+                </choose>
+            </else>
+        </choose>  
+    </macro>
+    <macro name="editor">
+        <text value="hrsg. von "/>
+        <names variable="editor">
+            <name and="symbol"/>
+        </names>    
+    </macro>
+    <macro name="book-journal-title">
+        <text prefix="in: " variable="container-title" font-style="italic"/>
+    </macro>
+    <macro name="issued-year">
+        <choose>        
+            <if variable="issued">
+                <date variable="issued" form="text" date-part="year"/>
+            </if>
+            <else>
+                <text term="no-date" form="short"/>
+            </else>
+        </choose>
+    </macro>
+    <macro name="page-count">
+        <group delimiter=" ">
+            <text term="page" form="short"/>
+            <text variable="page"/>
+        </group>
+    </macro>
+    <macro name="edition">
+        <choose>
+            <if type="chapter book entry-dictionary entry-encyclopedia">
+                <group delimiter=", ">
+                    <text macro="book-journal-title"/>
+                    <text macro="editor"/>
+                    <text prefix="Bd. " variable="volume"/>
+                    <group delimiter=" ">
+                        <text variable="publisher-place"/>
+                        <text macro="issued-year"/>
+                    </group>
+                </group>
+            </if>
+            <if type="thesis">
+                <group delimiter=", ">
+                    <group delimiter=" ">    
+                        <text variable="genre"/>
+                        <text variable="publisher-place"/>
+                    </group>
+                    <text macro="issued-year"/>
+                </group>
+            </if>
+            <if type="article-journal">    
+                <group delimiter=" ">
+                    <text macro="book-journal-title"/>
+                    <group delimiter="/">
+                        <text variable="volume"/>
+                        <text variable="issue"/>
+                    </group>
+                    <text macro="issued-year" prefix="(" suffix=")"/>
+                </group>
+            </if>
+        </choose>        
+    </macro>
+    <macro name="access">
+        <group delimiter=" ">
+            <text variable="URL" suffix=","/>
+            <text term="access-term"/>
+            <date variable="accessed" form="text"/>
+        </group>
+    </macro>
+    <macro name="serie">
+        <group prefix="(" suffix=")" delimiter=", ">
+            <text variable="collection-title" />
+            <text variable="collection-number"/>
+        </group>
+    </macro>
+    <macro name="short-title">
+        <choose>
+            <if type="book">
+                <text variable="title-short" font-style="italic"/>
+            </if>
+            <else>
+                <choose>
+                    <if type="entry-dictionary">
+                        <text prefix="Art. »" suffix="«" variable="title-short"/>
+                    </if>
+                    <else>
+                        <text prefix="»" suffix="«" variable="title-short"/>
+                    </else>
+                </choose>
+            </else>
+        </choose>
+    </macro>
+    <macro name="locator-page">
+        <group delimiter=" ">
+            <label variable="locator" form="short"/>
+            <number variable="locator"/>
+        </group>
+    </macro>
+    <citation>
+        <layout suffix="." delimiter="; ">
+            <group delimiter=" ">
+                <group delimiter=", ">      
+                    <choose>
+                        <if position="first">
+                            <text macro="author"/>
+                            <text macro="title"/>
+                            <text macro="edition"/>
+                            <text macro="access"/>
+                            <text macro="serie"/>
+                            <choose>
+                                <if variable="locator">
+                                    <text macro="locator-page"/>
+                                </if>
+                                <else>
+                                    <text macro="page-count"/>
+                                </else>
+                            </choose>
+                        </if>
+                        <if position="ibid">
+                            <text term="ibid"/>
+                            <text macro="locator-page"/>
+                        </if>
+                        <if position="subsequent">
+                            <text macro="author"/>
+                            <choose>
+                                <if variable="title-short">
+                                    <text macro="short-title"/>    
+                                </if>
+                                <else>
+                                    <text macro="title"/>
+                                </else>
+                            </choose>
+                            <text macro="locator-page"/>
+                        </if>
+                    </choose>
+                </group>
+            </group>
+        </layout>
+    </citation>
+    <bibliography>
+        <sort>
+            <key variable="author"/>
+            <key variable="issued"/>
+        </sort>
+        <layout suffix=".">
+            <group delimiter=" ">
+                <group delimiter=", ">      
+                    <text macro="author-bibliography"/>
+                    <text macro="title"/>
+                    <text macro="edition"/>
+                    <text macro="access"/>
+                    <text macro="page-count"/>    
+                </group>
+                <text macro="serie"/>
+            </group>
+        </layout>
+    </bibliography>
 </style>
