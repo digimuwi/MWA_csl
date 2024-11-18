@@ -8,10 +8,8 @@
     </info>
     <locale xml:lang="de">
         <terms>
-            <term name="no-date">o. J.</term>
-            <term name="edition-prefix">hrsg. von</term>
+            <term name="no date">o. J.</term>
             <term name="in">in: </term>
-            <term name="accessed-term">abgerufen am</term>
             <term name="editor">
                 <single> (Hrsg.)</single>
                 <multiple> (Hrsgg.)</multiple>
@@ -54,7 +52,12 @@
         <choose>
             <if variable="author">
                 <names variable="author">
-                    <name name-as-sort-order="first" demote-non-dropping-particle="display-and-sort"/>
+                    <!--<name name-as-sort-order="first" demote-non-dropping-particle="display-and-sort"/>-->
+                    <name name-as-sort-order="first"/>
+                    <!--
+                        TODO: since `demote-non-dropping-particle="display-and-sort"` is a global option that is to be
+                        applied to style, we have to find a work around will keep this commented out until then
+                    -->
                 </names>
             </if>
             <else>
@@ -81,10 +84,12 @@
     <macro name="issued-year">
         <choose>        
             <if variable="issued">
-                <date variable="issued" form="text" date-part="year"/>
+                <date variable="issued">
+                    <date-part name="year"/>
+                </date>
             </if>
             <else>
-                <text term="no-date" form="short"/>
+                <text term="no date" form="short"/>
             </else>
         </choose>
     </macro>
@@ -107,7 +112,7 @@
                     </group>
                 </group>
             </if>
-            <if type="thesis">
+            <else-if type="thesis">
                 <group delimiter=", ">
                     <group delimiter=" ">    
                         <text variable="genre"/>
@@ -115,8 +120,8 @@
                     </group>
                     <text macro="issued-year"/>
                 </group>
-            </if>
-            <if type="article-journal">    
+            </else-if>
+            <else-if type="article-journal">    
                 <group delimiter=" ">
                     <text macro="book-journal-title"/>
                     <group delimiter="/">
@@ -125,14 +130,13 @@
                     </group>
                     <text macro="issued-year" prefix="(" suffix=")"/>
                 </group>
-            </if>
+            </else-if>
         </choose>        
     </macro>
     <macro name="access">
         <group delimiter=" ">
             <text variable="URL" suffix=","/>
-            <text term="access-term"/>
-            <date variable="accessed" form="text"/>
+            <date prefix="abgerufen am " variable="accessed" form="text"/>
         </group>
     </macro>
     <macro name="serie">
@@ -184,11 +188,11 @@
                                 </else>
                             </choose>
                         </if>
-                        <if position="ibid">
+                        <else-if position="ibid">
                             <text term="ibid"/>
                             <text macro="locator-page"/>
-                        </if>
-                        <if position="subsequent">
+                        </else-if>
+                        <else-if position="subsequent">
                             <text macro="author"/>
                             <choose>
                                 <if variable="title-short">
@@ -199,7 +203,7 @@
                                 </else>
                             </choose>
                             <text macro="locator-page"/>
-                        </if>
+                        </else-if>
                     </choose>
                 </group>
             </group>

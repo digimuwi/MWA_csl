@@ -8,7 +8,7 @@ The correctness of the presented CSL is to be validated via [validator.citations
 The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265).
 
 - [ ] Selbstständige Publikationen
-  - [ ] Monografien
+  - [x] Monografien
   - [ ] Sammelpublikationen
   - [ ] Mehrbändige Bücher
   - [ ] Elektronisch publizierte Bücher (E-Books)
