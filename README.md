@@ -53,8 +53,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 The following additional rules provided by Gardner/Springfeld (p. 262-263):
 
 #### General Rules
-- Autor/etc. `NACHNAME,VORNAME` in Lit.v.
-- Fußs. `VORNAME,NACHNAME`
+- Autor/etc. `NACHNAME,VORNAME` in Lit.v., Fußs. `VORNAME,NACHNAME`
 - Vornamen ausgeschrieben (außer Mittelinitialen, wenn auch in Publikation abgekürzt)
 - bei unbekanntem Autor, beginn mit Titel
 - Punkt hinter allem (nach Pfeffer, in der eigentlichen Intention der Autoren: nicht nur bei Fußnoten)
@@ -72,4 +71,3 @@ The following section is relevant for users of the CSL, since they have to be ap
   - (string manipulation using CSL is impossible (solution, maybe plugin preprocessor for citation data))
 - Erscheinungsort === Hauptsitz des Verlags
 - Erscheinungsort wird eingedeutscht
-- 
