@@ -5,7 +5,7 @@ A CSL-file for automatic citation in Zotero using the referencing style of: Matt
 The correctness of the presented CSL is to be validated via [validator.citationstyles.org](https://validator.citationstyles.org/), recommended by [Zotero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step), following the CSL specification of [citationstyles.org](https://citationstyles.org/) (links accessed 2024-11-18).
 
 ## Scope
-The expected scope of the CSL follow the citation categories defined by Gardner/Springfeld (p. 264-265).
+The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265).
 
 - [ ] Selbstständige Publikationen
   - [ ] Monografien
