@@ -24,10 +24,10 @@
             <else>
                 <choose>
                     <if type="entry-dictionary">
-                        <text prefix="Art. »" suffix="«" variable="title"/>
+                        <text prefix="Art. &#187;" suffix="&#171;" variable="title"/>
                     </if>
                     <else>
-                        <text prefix="»" suffix="«" variable="title"/>
+                        <text prefix="&#187;" suffix="&#171;" variable="title"/>
                     </else>
                 </choose>
             </else>
@@ -157,10 +157,10 @@
             <else>
                 <choose>
                     <if type="entry-dictionary">
-                        <text prefix="Art. »" suffix="«" variable="title-short"/>
+                        <text prefix="Art. &#187;" suffix="&#171;" variable="title-short"/>
                     </if>
                     <else>
-                        <text prefix="»" suffix="«" variable="title-short"/>
+                        <text prefix="&#187;" suffix="&#171;" variable="title-short"/>
                     </else>
                 </choose>
             </else>

@@ -1,11 +1,13 @@
 # MWA_csl
-A CSL-file for automatic citation in Zotero using the referencing style of: Matthew Gardner und Sara Springfeld, Musikwissenschaftliches Arbeiten. Eine Einführung, Kassel 2014.
+A CSL file for automatic citation in Zotero using the referencing style of: Matthew Gardner und Sara Springfeld, Musikwissenschaftliches Arbeiten. Eine Einführung, Kassel 2014.
 
 ## CSL Validation
 The correctness of the presented CSL is to be validated via [validator.citationstyles.org](https://validator.citationstyles.org/), recommended by [Zotero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step), following the CSL specification of [citationstyles.org](https://citationstyles.org/) (links accessed 2024-11-18).
 
-## Scope
-The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265).
+## Outline of Gardner/Springfeld referencing style
+
+### Scope
+The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265):
 
 - [ ] Selbstständige Publikationen
   - [x] Monografien
@@ -47,3 +49,27 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 - [ ] Bilder
 - [ ] Musikinstrumente
 
+### Rules
+The following additional rules provided by Gardner/Springfeld (p. 262-263):
+
+#### General Rules
+- Autor/etc. `NACHNAME,VORNAME` in Lit.v.
+- Fußs. `VORNAME,NACHNAME`
+- Vornamen ausgeschrieben (außer Mittelinitialen, wenn auch in Publikation abgekürzt)
+- bei unbekanntem Autor, beginn mit Titel
+- Punkt hinter allem (nach Pfeffer, in der eigentlichen Intention der Autoren: nicht nur bei Fußnoten)
+- `und` bei mehr als 1 Autor/etc./Verlagsorte
+- Bücher/etc. kursiver Titel
+- `>>TITEL<<` bei Aufsätzen/Lexikonartikeln
+- `ERSCHEINUNGSORT ERSCHEINUNGSJAHR`
+- spätere `n`-te Auflage als Hochzahl `<sup>n</sup>YYYY`, bei grundlegender überarbeitung, etwa `n., neubearbeitete Ausgabe`
+- (URL,DOI,URN)
+
+#### Impossible
+The following section is relevant for users of the CSL, since they have to be applied "by hand":
+
+- Trennung von Titel,Untertitel statt `:` mit `.`
+  - (string manipulation using CSL is impossible (solution, maybe plugin preprocessor for citation data))
+- Erscheinungsort === Hauptsitz des Verlags
+- Erscheinungsort wird eingedeutscht
+- 
