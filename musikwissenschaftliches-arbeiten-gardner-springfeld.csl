@@ -36,17 +36,12 @@
                     <name delimiter=", " and="text" delimiter-precedes-last="never"/>
                 </names>
             </if>
-            <!-- TODO: maybe unneccesary since for an abscent author its supposed to be just empty
-            <else>
-                <choose>
-                    <if variable="editor">
-                        <names variable="editor">
-                            <name delimiter=", " and="text" delimiter-precedes-last="never"/>
-                        </names>
-                    </if>
-                </choose>
-            </else>
-            -->
+            <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
+            <else-if variable="editor">
+                <names variable="editor" suffix=" (Hrsg.)">
+                    <name delimiter=", " and="text" delimiter-precedes-last="never"/>
+                </names>
+            </else-if>
         </choose>  
     </macro>
     <macro name="author-bibliography">
@@ -61,21 +56,24 @@
                     -->
                 </names>
             </if>
-            <!-- TODO: maybe unneccesary since for an abscent author its supposed to be just empty
+            <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
             <else-if variable="editor">
-                <names variable="editor">
+                <names variable="editor" suffix=" (Hrsg.)">
                     <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="first"/>
                 </names>
-                <text term="editor"/>
             </else-if>
-            -->
         </choose>  
     </macro>
     <macro name="editor">
-        <text value="hrsg. von "/>
-        <names variable="editor">
-            <name delimiter=", " and="text" delimiter-precedes-last="never"/>
-        </names>    
+        <!-- [1] This exclusion is needed, since in some cases we want the editors in front -->
+        <choose>
+            <if variable="author">
+                <text value="hrsg. von "/>
+                <names variable="editor">
+                    <name delimiter=", " and="text" delimiter-precedes-last="never"/>
+                </names>    
+            </if>
+        </choose>  
     </macro>
     <macro name="book-journal-title">
         <text prefix="in: " variable="container-title" font-style="italic"/>
