@@ -75,10 +75,18 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - als `Buch` oder Reihe eintragen
     - Titel wieder alles rein was, was rein mmuss, und manuell entkursiven
 - [ ] Aufnahmen
-  - [ ] CD/LP
-  - [ ] DVD, Videos und Filme
-  - [ ] Einzelne Tracks von einer CD oder DVD
-  - [ ] Digitale Audio- [ ] oder Videodateien (z.B. MP3, iTunes, YouTube)
+  - [x] CD/LP
+    - siehe DVD, Videos und Filme
+  - [x] DVD, Videos und Filme
+    - Komponisten als `Komponist`
+    - jegliche Performer, Director, etc. als `Darsteller` (`Mitarbeiter` werden ignoriert)
+      - und entweder hinter Nachmane `(Regie)` etc. schreiben oder als Literal (`Zu einfachem Feld wechseln`)
+    - Titel der Sammelbox als `Titel der Reihe` und Zahl ist `Band`
+    - Wichtig: `Ort` freilassen (siehe Einzelne Tracks)
+  - [x] Einzelne Tracks von einer CD oder DVD
+    - Hack: wie CD/LP, nur Titel (des Tracks) bei `Titel` eintragen, Titel der CD/etc. bei `Ort`
+  - [x] Digitale Audio oder Videodateien (z.B. MP3, iTunes, YouTube)
+    - weicht leicht ab von Definition (aber URL so wahrscheinlich eher sowie gewollt?)
 - [ ] Bilder
 - [ ] Musikinstrumente
 
