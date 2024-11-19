@@ -12,8 +12,11 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 - [ ] Selbstständige Publikationen
   - [x] Monografien
   - [x] Sammelpublikationen
+    - Hinweis: Alle Editoren auf "Herausgeber" setzen, Autoren weglassen
   - [x] Mehrbändige Bücher
-  - [ ] Elektronisch publizierte Bücher (E-Books)
+    - Bei "Band" soll nichts eigentragen sein, aber Anzahl der Bände ausgefüllt
+  - [x] Elektronisch publizierte Bücher (E-Books)
+    - URL,DOI,URN soll bei "URL" eingetragen werden, Abrufdatum bei "Heruntergeladen am"
   - [ ] Bücher in einer gezählten Reihe
   - [ ] Unveröffentlichte oder online publizierte Hochschulschriften
   - [ ] Reprints / Nachdrucke
@@ -81,3 +84,5 @@ The following section is relevant for users of the CSL, since they have to be ap
 ```
 - Erscheinungsort === Hauptsitz des Verlags
 - Erscheinungsort wird eingedeutscht
+- Korrekte Angabe von URL,DOI,URN bei E-Books
+  - again, no string manipulation (its contents is defined in the json field `note`)

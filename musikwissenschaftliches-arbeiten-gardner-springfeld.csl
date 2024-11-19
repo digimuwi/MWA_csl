@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style class="note" version="1.0" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
+    <!-- CSL description -->
     <info>
         <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
         <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
@@ -8,10 +9,11 @@
     </info>
     <locale xml:lang="de">
         <terms>
-            <term name="no date">o. J.</term>
+            <term name="no date">o. J.</term> <!-- TODO: needed? -->
             <term name="in">in: </term>
         </terms>
     </locale>
+    <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
             <if type="book">
@@ -139,8 +141,12 @@
     </macro>
     <macro name="access">
         <group delimiter=" ">
-            <text variable="URL" suffix=","/>
-            <date prefix="abgerufen am " variable="accessed" form="text"/>
+            <text variable="URL" suffix=", abgerufen am "/>
+            <date variable="accessed">
+                <date-part name="day" suffix="."/>
+                <date-part name="month" form="numeric" suffix="."/>
+                <date-part name="year"/>
+            </date>
         </group>
     </macro>
     <macro name="serie">
@@ -172,6 +178,18 @@
             <number variable="locator"/>
         </group>
     </macro>
+    <macro name="note">
+        <choose>
+            <if type="book"> <!-- maybe extend -->
+                <choose>
+                    <if variable="note">
+                        <text variable="note"/>
+                    </if>
+                </choose>
+            </if>
+        </choose>
+    </macro>
+    <!-- FOOTNOTE (type agnostic definition) -->
     <citation>
         <layout suffix="." delimiter="; ">
             <group delimiter=" ">
@@ -214,6 +232,7 @@
             </group>
         </layout>
     </citation>
+    <!-- BIBLIOGRAPHY (type agonistic definition)-->
     <bibliography>
         <sort>
             <key variable="author"/>
