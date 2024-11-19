@@ -57,7 +57,7 @@ The following additional rules provided by Gardner/Springfeld (p. 262-263):
 - Vornamen ausgeschrieben (außer Mittelinitialen, wenn auch in Publikation abgekürzt)
 - bei unbekanntem Autor, beginn mit Titel
 - Punkt hinter allem (nach Pfeffer, in der eigentlichen Intention der Autoren: nicht nur bei Fußnoten)
-- `und` bei mehr als 1 Autor/etc./Verlagsorte
+- `und` bei mehr als 1 Autor/etc.
 - Bücher/etc. kursiver Titel
 - `>>TITEL<<` bei Aufsätzen/Lexikonartikeln
 - `ERSCHEINUNGSORT ERSCHEINUNGSJAHR`
@@ -65,9 +65,17 @@ The following additional rules provided by Gardner/Springfeld (p. 262-263):
 - (URL,DOI,URN)
 
 #### Impossible
-The following section is relevant for users of the CSL, since they have to be applied "by hand":
+The following section is relevant for users of the CSL, since they have to be applied "by hand" (solution, maybe plugin to preprocess CSL-JSONs?):
 
 - Trennung von Titel,Untertitel statt `:` mit `.`
-  - (string manipulation using CSL is impossible (solution, maybe plugin preprocessor for citation data))
+  - string manipulation using CSL is impossible (solution, maybe plugin preprocessor for citation data))
+- Behandlung bei >1 Verlag und entsprechend >1 Verlagsort
+  - the csl-json only specifies only `publisher` and `publisher-place` (next to the `original-` form of each of the two); most jsons do something like
+```json
+{
+    "publisher": "Bärenreiter ; Metzler",
+    "publisher-place": "Kassel : Stuttgart" // from Mozart Handbuch, Leopold et al.
+}
+```
 - Erscheinungsort === Hauptsitz des Verlags
 - Erscheinungsort wird eingedeutscht

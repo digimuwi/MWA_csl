@@ -10,10 +10,6 @@
         <terms>
             <term name="no date">o. J.</term>
             <term name="in">in: </term>
-            <term name="editor">
-                <single> (Hrsg.)</single>
-                <multiple> (Hrsgg.)</multiple>
-            </term>
         </terms>
     </locale>
     <macro name="title">
@@ -40,16 +36,17 @@
                     <name delimiter=", " and="text" delimiter-precedes-last="never"/>
                 </names>
             </if>
+            <!-- TODO: maybe unneccesary since for an abscent author its supposed to be just empty
             <else>
                 <choose>
                     <if variable="editor">
                         <names variable="editor">
                             <name delimiter=", " and="text" delimiter-precedes-last="never"/>
                         </names>
-                        <text term="editor"/>
                     </if>
                 </choose>
             </else>
+            -->
         </choose>  
     </macro>
     <macro name="author-bibliography">
@@ -57,29 +54,27 @@
             <if variable="author">
                 <names variable="author">
                     <!--<name name-as-sort-order="first" demote-non-dropping-particle="display-and-sort"/>-->
-                    <name delimiter=", " and="text" name-as-sort-order="first"/>
+                    <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="first"/>
                     <!--
                         TODO: since `demote-non-dropping-particle="display-and-sort"` is a global option that is to be
                         applied to style, we have to find a work around will keep this commented out until then
                     -->
                 </names>
             </if>
-            <else>
-                <choose>
-                    <if variable="editor">
-                        <names variable="editor">
-                            <name name-as-sort-order="first"/>
-                        </names>
-                        <text term="editor"/>
-                    </if>
-                </choose>
-            </else>
+            <!-- TODO: maybe unneccesary since for an abscent author its supposed to be just empty
+            <else-if variable="editor">
+                <names variable="editor">
+                    <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="first"/>
+                </names>
+                <text term="editor"/>
+            </else-if>
+            -->
         </choose>  
     </macro>
     <macro name="editor">
         <text value="hrsg. von "/>
         <names variable="editor">
-            <name and="symbol"/>
+            <name delimiter=", " and="text" delimiter-precedes-last="never"/>
         </names>    
     </macro>
     <macro name="book-journal-title">
