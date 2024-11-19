@@ -16,7 +16,7 @@
     <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
-            <if type="book">
+            <if type="book thesis">
                 <text variable="title" font-style="italic"/>
             </if>
             <else>
@@ -127,7 +127,7 @@
                 <group delimiter=", ">
                     <group delimiter=" ">    
                         <text variable="genre"/>
-                        <text variable="publisher-place"/>
+                        <text variable="publisher"/>
                     </group>
                     <text macro="issued-year"/>
                 </group>

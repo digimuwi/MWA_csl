@@ -22,6 +22,10 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - URL,DOI,URN soll bei "URL" eingetragen werden, Abrufdatum bei "Heruntergeladen am"
   - [x] Bücher in einer gezählten Reihe
     - ausgefüllt soll: `Reihe` und `Nummer der Reihe`
+  - [x] Unveröffentlichte oder online publizierte Hochschulschriften
+    - müssen (?) manuell ausgefüllt werden mit Eintragsart `Dissertation`
+      - bei `Art` sowas wie `Diss.` oder `Masterarbeit`
+      - Institution bei `Universität`
 - [ ] Unselbstständige Publikationen:
   - [ ] Lexikonartikel
     - [x] Lexikon
@@ -64,8 +68,6 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 #### Possibly Unachievable
 
 - (Selbstständige Publikationen)
-  - Unveröffentlichte oder online publizierte Hochschulschriften
-    - müssen (?) manuell ausgefüllt werden
   - Reprints / Nachdrucke
     - müssen (?) manuell nachbereitet werden
 
