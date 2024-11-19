@@ -7,9 +7,9 @@ The correctness of the presented CSL is to be validated via [validator.citations
 ## Outline of Gardner/Springfeld referencing style
 
 ### Scope
+The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265). Under _Expected_ already implemented and to be explored categories are listed, while unachievables are sent down to _Possibly Unachievable_.
 
 #### Expected
-The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265):
 
 - [x] Selbstständige Publikationen
   - [x] Monografien
@@ -24,6 +24,13 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - ausgefüllt soll: `Reihe` und `Nummer der Reihe`
 - [ ] Unselbstständige Publikationen:
   - [ ] Lexikonartikel
+    - [x] Lexikon
+      - Wenn wir von dem Lexikon als `Buch` aus starten:
+        - `Eintragsart: Buch` -> `Wörterbucheintrag` (sonst fehlt `Art.`)
+        - `Titel` ist Titel des Eintrags
+        - `Titel des Wörterbuchs` sollte dann automatisch korrekt Titel des Lexikons sein
+        - `Herausgeber` sind die Editoren
+        - wichtig: Autor als `Autor` hinzufügen
     - [ ] MGG2
     - [ ] NG2
     - [ ] Artikel in Onlinelexika (GMO)
@@ -56,7 +63,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 
 #### Possibly Unachievable
 
-- Selbstständige Publikationen
+- (Selbstständige Publikationen)
   - Unveröffentlichte oder online publizierte Hochschulschriften
     - müssen (?) manuell ausgefüllt werden
   - Reprints / Nachdrucke
