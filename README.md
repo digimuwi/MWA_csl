@@ -7,7 +7,7 @@ The correctness of the presented CSL is to be validated via [validator.citations
 ## Outline of Gardner/Springfeld referencing style
 
 ### Scope
-The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265). Under _Expected_ already implemented and to be explored categories are listed, while unachievables are sent down to _Possibly Unachievable_.
+The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265). Under _Expected_ already implemented and to be explored categories are listed, while unachievables are sent down to _Impossible_.
 
 #### Expected
 
@@ -26,7 +26,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - müssen (?) manuell ausgefüllt werden mit Eintragsart `Dissertation`
       - bei `Art` sowas wie `Diss.` oder `Masterarbeit`
       - Institution bei `Universität`
-- [ ] Unselbstständige Publikationen:
+- [x] Unselbstständige Publikationen:
   - [x] Lexikonartikel
     - Wenn wir von dem Lexikon als `Buch` aus starten:
       - `Eintragsart`: `Buch` -> `Wörterbucheintrag` (sonst fehlt `Art.`, wenn `Art.` nicht erwünscht, `Buchteil` auswählen)
@@ -53,10 +53,8 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - [x] Artikel in Zeitungen oder Magazinen
     - `Zeitungsartikel` (Achtung, nicht `Zeischriftenartikel`!)
       - Name der Zeitung: `Publikation`
-  - [ ] Dokumente in Briefausgaben und Dokumentensammlungen
-  - [ ] Textteile aus Notenausgaben
-  - [ ] CD/DVD-Booklets
-  - [ ] Programmhefttexte
+  - [x] Textteile aus Notenausgaben
+    - Anlage z.B. als `Buch` empfohlen
 - [ ] Internetinhalte
   - [ ] Webseiten
   - [ ] Webblogs
@@ -74,11 +72,23 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 - [ ] Bilder
 - [ ] Musikinstrumente
 
-#### Possibly Unachievable
+#### Impossible
 
 - (Selbstständige Publikationen)
   - Reprints / Nachdrucke
     - müssen (?) manuell nachbereitet werden
+- Dokumente in Briefausgaben und Dokumentensammlungen
+  - zu spezifisch; empfehlendwert als sowas wie `Buch`, je nach Form, Fußnote ist ja komplett Freestyle
+- CD/DVD-Booklets
+  - zu selten (?), Empfehlung:
+    - als `Buch`, bei `Ort` Label Labelnummer eintragen,
+    - Komma vor Datum setzen
+    - `CD-Booklet für` manuell hinzufügen
+- Programmhefttexte
+  - als Aufsatz in einem Buch betrachten (`Buchteil`)
+  - manuell den relevanten Teil entkursiven
+  - Aufführungsort bei `Ort`
+  - Manuell Komma vor Datum
 
 ### Rules
 The following additional rules provided by Gardner/Springfeld (p. 262-263):
