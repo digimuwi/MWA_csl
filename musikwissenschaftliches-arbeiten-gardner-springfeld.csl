@@ -8,10 +8,10 @@
         <updated>2024-11-18T18:00:00+01:00</updated>
     </info>
     <locale xml:lang="de">
-        <terms>
-            <term name="no date">o. J.</term> <!-- TODO: needed? -->
-            <term name="in">in: </term>
-        </terms>
+        <!--<terms>-->
+            <!-- <term name="no date">o. J.</term> TODO: needed? -->
+            <!-- TODO: maybe magic literals? -->
+        <!--</terms>-->
     </locale>
     <!-- MACROS (type dependent) -->
     <macro name="title">
@@ -81,16 +81,9 @@
         <text prefix="in: " variable="container-title" font-style="italic"/>
     </macro>
     <macro name="issued-year">
-        <choose>        
-            <if variable="issued">
-                <date variable="issued">
-                    <date-part name="year"/>
-                </date>
-            </if>
-            <else>
-                <text term="no date" form="short"/>
-            </else>
-        </choose>
+        <date variable="issued">
+            <date-part name="year"/>
+        </date>
     </macro>
     <macro name="page-count">
         <group delimiter=" ">
@@ -103,6 +96,7 @@
             <if type="chapter book entry-dictionary entry-encyclopedia">
                 <group delimiter=", ">
                     <text macro="book-journal-title"/>
+                    <text variable="edition"/>
                     <text macro="editor"/>
                     <choose>
                         <if variable="volume">
@@ -116,11 +110,7 @@
                         <text variable="publisher-place"/>
                         <text macro="issued-year"/>
                     </group>
-                    <choose>
-                        <if variable="note">
-                            <text variable="note"/>
-                        </if>
-                    </choose>
+                    <text variable="note"/>
                 </group>
             </if>
             <else-if type="thesis">

@@ -27,17 +27,23 @@ The expected scope of the CSL follows the citation categories defined by Gardner
       - bei `Art` sowas wie `Diss.` oder `Masterarbeit`
       - Institution bei `Universität`
 - [ ] Unselbstständige Publikationen:
-  - [ ] Lexikonartikel
+  - [x] Lexikonartikel
+    - Wenn wir von dem Lexikon als `Buch` aus starten:
+      - `Eintragsart`: `Buch` -> `Wörterbucheintrag` (sonst fehlt `Art.`)
+      - `Titel` ist Titel des Eintrags
+      - `Titel des Wörterbuchs` sollte dann automatisch korrekt Titel des Lexikons sein
+      - `Herausgeber` sind die Editoren
+      - wichtig: Autor als `Autor` hinzufügen
     - [x] Lexikon
-      - Wenn wir von dem Lexikon als `Buch` aus starten:
-        - `Eintragsart: Buch` -> `Wörterbucheintrag` (sonst fehlt `Art.`)
-        - `Titel` ist Titel des Eintrags
-        - `Titel des Wörterbuchs` sollte dann automatisch korrekt Titel des Lexikons sein
-        - `Herausgeber` sind die Editoren
-        - wichtig: Autor als `Autor` hinzufügen
-    - [ ] MGG2
-    - [ ] NG2
-    - [ ] Artikel in Onlinelexika (GMO)
+    - [x] MGG2
+      - bei `Auflage`: `2., neubearbeitete Ausgabe` eintragen
+      - `Sachteil`/... muss manuell eingefügt werden
+      - Spalten bei `Seiten` eintragen und manuell: `S.` -> `Sp.`
+    - [x] NG2
+      - bei `Auflage`: `2., neubearbeitete Ausgabe` eintragen
+    - [x] Artikel in Onlinelexika (GMO)
+      - leer: `Ort`,`Datum`
+      - befüllt: `Titel`, `Autor`, `Titel des Wörterbuchs`, `URL`, `Heruntergeladen am`
   - [ ] Handbuchbände und -kapitel
   - [ ] Aufsätze in Sammelpublikationen
   - [ ] Aufsätze in Kongressberichten
@@ -108,3 +114,10 @@ The following section is relevant for users of the CSL, since they have to be ap
   - `Kindle Edition` etc. may be missing
 - Unveröffentlichte oder online publizierte Hochschulschriften
 - Reprints / Nachdrucke korrekt mit "altem" und "neuem" Titel etc.
+- MGG2: `Sachteil`/... muss manuell eingefügt werden
+  - TODO: maybe abuse `Signatur` (`call-number`) to put something between editors and Bd.
+
+### Misc. TODOs
+- check page sections / only 1 page / etc. (citation and bibliography)
+- check "Kurzform"
+
