@@ -7,9 +7,11 @@ The correctness of the presented CSL is to be validated via [validator.citations
 ## Outline of Gardner/Springfeld referencing style
 
 ### Scope
+
+#### Expected
 The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265):
 
-- [ ] Selbstständige Publikationen
+- [x] Selbstständige Publikationen
   - [x] Monografien
   - [x] Sammelpublikationen
     - Hinweis: Alle Editoren auf `Herausgeber` setzen, Autoren weglassen
@@ -18,9 +20,8 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - Ein Hinweis wie "Kindle Edition" soll bei Extra eingetragen werden (oder von Hand nachträglich)
   - [x] Elektronisch publizierte Bücher (E-Books)
     - URL,DOI,URN soll bei "URL" eingetragen werden, Abrufdatum bei "Heruntergeladen am"
-  - [ ] Bücher in einer gezählten Reihe
-  - [ ] Unveröffentlichte oder online publizierte Hochschulschriften
-  - [ ] Reprints / Nachdrucke
+  - [x] Bücher in einer gezählten Reihe
+    - ausgefüllt soll: `Reihe` und `Nummer der Reihe`
 - [ ] Unselbstständige Publikationen:
   - [ ] Lexikonartikel
     - [ ] MGG2
@@ -52,6 +53,14 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - [ ] Digitale Audio- [ ] oder Videodateien (z.B. MP3, iTunes, YouTube)
 - [ ] Bilder
 - [ ] Musikinstrumente
+
+#### Possibly Unachievable
+
+- Selbstständige Publikationen
+  - Unveröffentlichte oder online publizierte Hochschulschriften
+    - müssen (?) manuell ausgefüllt werden
+  - Reprints / Nachdrucke
+    - müssen (?) manuell nachbereitet werden
 
 ### Rules
 The following additional rules provided by Gardner/Springfeld (p. 262-263):
@@ -88,3 +97,5 @@ The following section is relevant for users of the CSL, since they have to be ap
 - Korrekte Angabe von URL,DOI,URN bei E-Books
   - again, no string manipulation (its contents is defined in the json field `note`)
   - `Kindle Edition` etc. may be missing
+- Unveröffentlichte oder online publizierte Hochschulschriften
+- Reprints / Nachdrucke korrekt mit "altem" und "neuem" Titel etc.
