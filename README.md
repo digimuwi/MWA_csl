@@ -29,7 +29,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 - [ ] Unselbstständige Publikationen:
   - [x] Lexikonartikel
     - Wenn wir von dem Lexikon als `Buch` aus starten:
-      - `Eintragsart`: `Buch` -> `Wörterbucheintrag` (sonst fehlt `Art.`)
+      - `Eintragsart`: `Buch` -> `Wörterbucheintrag` (sonst fehlt `Art.`, wenn `Art.` nicht erwünscht, `Buchteil` auswählen)
       - `Titel` ist Titel des Eintrags
       - `Titel des Wörterbuchs` sollte dann automatisch korrekt Titel des Lexikons sein
       - `Herausgeber` sind die Editoren
@@ -44,12 +44,15 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - [x] Artikel in Onlinelexika (GMO)
       - leer: `Ort`,`Datum`
       - befüllt: `Titel`, `Autor`, `Titel des Wörterbuchs`, `URL`, `Heruntergeladen am`
-  - [ ] Handbuchbände und -kapitel
-  - [ ] Aufsätze in Sammelpublikationen
-  - [ ] Aufsätze in Kongressberichten
-  - [ ] Aufsätze in Festschriften
-  - [ ] Aufsätze in wissenscahftlichen Zeitschriften oder Jahrbüchern
-  - [ ] Aufsätze in Zeitungen oder Magazinen
+  - [x] Handbuchbände und -kapitel
+  - [x] Aufsätze in Sammelpublikationen
+    - Bei Aufsätzen etc., wenn kein `Art.` gewünscht, `Buchteil` auswählen (sonst `Wörterbucheintrag`)
+  - [x] Aufsätze in Kongressberichten
+  - [x] Aufsätze in Festschriften
+  - [x] Aufsätze in wissenscahftlichen Zeitschriften oder Jahrbüchern
+  - [x] Artikel in Zeitungen oder Magazinen
+    - `Zeitungsartikel` (Achtung, nicht `Zeischriftenartikel`!)
+      - Name der Zeitung: `Publikation`
   - [ ] Dokumente in Briefausgaben und Dokumentensammlungen
   - [ ] Textteile aus Notenausgaben
   - [ ] CD/DVD-Booklets
@@ -120,4 +123,5 @@ The following section is relevant for users of the CSL, since they have to be ap
 ### Misc. TODOs
 - check page sections / only 1 page / etc. (citation and bibliography)
 - check "Kurzform"
+- `DOI` field
 
