@@ -11,8 +11,8 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 
 - [ ] Selbstständige Publikationen
   - [x] Monografien
-  - [ ] Sammelpublikationen
-  - [ ] Mehrbändige Bücher
+  - [x] Sammelpublikationen
+  - [x] Mehrbändige Bücher
   - [ ] Elektronisch publizierte Bücher (E-Books)
   - [ ] Bücher in einer gezählten Reihe
   - [ ] Unveröffentlichte oder online publizierte Hochschulschriften
@@ -69,6 +69,8 @@ The following section is relevant for users of the CSL, since they have to be ap
 
 - Trennung von Titel,Untertitel statt `:` mit `.`
   - string manipulation using CSL is impossible (solution, maybe plugin preprocessor for citation data))
+- Title Case
+  - again, no string manipulation
 - Behandlung bei >1 Verlag und entsprechend >1 Verlagsort
   - the csl-json only specifies only `publisher` and `publisher-place` (next to the `original-` form of each of the two); most jsons do something like
 ```json
