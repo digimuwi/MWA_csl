@@ -146,12 +146,14 @@
     </macro>
     <macro name="access">
         <group delimiter=" ">
-            <text variable="URL" suffix=", abgerufen am "/>
-            <date variable="accessed">
-                <date-part name="day" suffix="."/>
-                <date-part name="month" form="numeric" suffix="."/>
-                <date-part name="year"/>
-            </date>
+            <group delimiter=", ">
+                <text variable="URL"/>
+                <date variable="accessed" prefix="abgerufen am ">
+                    <date-part name="day" suffix="."/>
+                    <date-part name="month" form="numeric" suffix="."/>
+                    <date-part name="year"/>
+                </date>
+            </group>
         </group>
     </macro>
     <macro name="serie">
