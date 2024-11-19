@@ -114,6 +114,9 @@
                     <text variable="note"/>
                 </group>
             </if>
+            <else-if type="webpage post-weblog">
+                <text variable="container-title" font-style="italic"/>
+            </else-if>
             <else-if type="thesis">
                 <group delimiter=", ">
                     <group delimiter=" ">    
@@ -158,6 +161,25 @@
                 <choose>
                     <if variable="URL">
                         <text variable="URL"/>
+                        <choose>
+                            <if type="webpage post-weblog">
+                                <group delimiter=" ">
+                                    <choose>
+                                        <if type="webpage">
+                                            <text value="letzte &#196;nderung "/>
+                                        </if>
+                                        <else-if type="post-weblog">
+                                            <text value="gepostet am "/>
+                                        </else-if>
+                                    </choose>
+                                    <date variable="issued">
+                                        <date-part name="day" suffix="."/>
+                                        <date-part name="month" form="numeric" suffix="."/>
+                                        <date-part name="year"/>
+                                    </date>
+                                </group>
+                            </if>
+                        </choose>
                         <date variable="accessed" prefix="abgerufen am ">
                             <date-part name="day" suffix="."/>
                             <date-part name="month" form="numeric" suffix="."/>

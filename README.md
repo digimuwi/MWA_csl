@@ -55,9 +55,13 @@ The expected scope of the CSL follows the citation categories defined by Gardner
       - Name der Zeitung: `Publikation`
   - [x] Textteile aus Notenausgaben
     - Anlage z.B. als `Buch` empfohlen
-- [ ] Internetinhalte
-  - [ ] Webseiten
-  - [ ] Webblogs
+- [x] Internetinhalte
+  - [x] Webseiten
+    - als `Webseite`
+    - letzte Änderung bei `Datum` eintragen
+  - [x] Webblogs
+    - als `Blog-Post`
+    - "gepostet am" bei `Datum` eintragen (wenn man stattdessen `letzte Änderung` da stehen haben will, macht man `Webseite`)
 - [ ] Noten
   - [ ] Selbstständige Notenausgaben
   - [ ] Notenausgaben aus einer Reihe und Gesamtausgaben
