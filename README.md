@@ -74,10 +74,11 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - [x] Faksimiles von Musikhandschriften
     - als `Buch` oder Reihe eintragen
     - Titel wieder alles rein was, was rein mmuss, und manuell entkursiven
-- [ ] Aufnahmen
+- [x] Aufnahmen
   - [x] CD/LP
     - siehe DVD, Videos und Filme
   - [x] DVD, Videos und Filme
+    - als `Tohnaufnahme`
     - Komponisten als `Komponist`
     - jegliche Performer, Director, etc. als `Darsteller` (`Mitarbeiter` werden ignoriert)
       - und entweder hinter Nachmane `(Regie)` etc. schreiben oder als Literal (`Zu einfachem Feld wechseln`)
@@ -87,8 +88,15 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - Hack: wie CD/LP, nur Titel (des Tracks) bei `Titel` eintragen, Titel der CD/etc. bei `Ort`
   - [x] Digitale Audio oder Videodateien (z.B. MP3, iTunes, YouTube)
     - weicht leicht ab von Definition (aber URL so wahrscheinlich eher sowie gewollt?)
-- [ ] Bilder
-- [ ] Musikinstrumente
+- [x] Bilder
+  - als `Kunstwerk`
+  - klar ist: Titel, Künstler, Medium, Größe des Kunstwerks, URL/Heruntergeladen
+  - sehr schlimme Lifehacks nötig bei:
+    - `Datum`: Erstelljahr/Datum
+    - `Sprache`: Ort (Erstell)
+    - `Archiv`: Besitzer
+    - `Standard im Archiv`: Anschaffungsdatum
+    - `Bibliothekskatalog`: Inventarnummer
 
 #### Impossible
 
@@ -109,6 +117,10 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - Manuell Komma vor Datum
 - Nachdrucke von älteren Notenausgaben
   - zu spezifisch, vielleicht einfach als `Buch` oder Reihe
+- Bildband
+  - wahrscheinlich am besten einfach als `Buch` und dann entsprechend anpassen
+- Musikinstrumente
+  - kommt hoffentlich selten genug vor
 
 ### Rules
 The following additional rules provided by Gardner/Springfeld (p. 262-263):

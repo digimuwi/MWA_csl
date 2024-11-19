@@ -17,7 +17,7 @@
     <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
-            <if type="book thesis manuscript">
+            <if type="book thesis manuscript graphic">
                 <text variable="title" font-style="italic"/>
             </if>
             <else-if type="song">
@@ -46,6 +46,7 @@
         </choose>
     </macro>
     <macro name="author">
+        <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
         <choose>
             <if type="song">
                 <names variable="composer">
@@ -70,6 +71,7 @@
         </choose>  
     </macro>
     <macro name="author-bibliography">
+        <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
         <choose>
             <if type="song">
                 <names variable="composer">
@@ -211,6 +213,19 @@
                     <text variable="publisher"/>
                     <text macro="issued-year"/>
                     <text variable="medium"/>
+                </group>
+            </else-if>
+            <else-if type="graphic">
+                <group delimiter=", ">
+                    <text variable="medium"/>
+                    <group delimiter=" ">
+                        <text variable="language"/>
+                        <text macro="issued-year"/>
+                    </group>
+                    <text variable="dimensions"/>
+                    <text variable="archive"/>
+                    <text variable="archive_location"/>
+                    <text variable="source"/>
                 </group>
             </else-if>
         </choose>        
