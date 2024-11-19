@@ -76,7 +76,7 @@ The following section is relevant for users of the CSL, since they have to be ap
 ```json
 {
     "publisher": "Bärenreiter ; Metzler",
-    "publisher-place": "Kassel : Stuttgart" // from Mozart Handbuch, Leopold et al.
+    "publisher-place": "Kassel : Stuttgart"
 }
 ```
 - Erscheinungsort === Hauptsitz des Verlags
