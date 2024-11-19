@@ -62,12 +62,18 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - [x] Webblogs
     - als `Blog-Post`
     - "gepostet am" bei `Datum` eintragen (wenn man stattdessen `letzte Änderung` da stehen haben will, macht man `Webseite`)
-- [ ] Noten
-  - [ ] Selbstständige Notenausgaben
-  - [ ] Notenausgaben aus einer Reihe und Gesamtausgaben
-  - [ ] Nachdrucke von älteren Notenausgaben
-  - [ ] Manuskripte
-  - [ ] Faksimiles von Musikhandschriften
+- [x] Noten
+  - [x] Selbstständige Notenausgaben
+    - als `Buch`, relevante Teile im Titel manuell entkursiven
+    - `Titel:` Titel. untertitel Opuszahl/Werkverzeichnisnummer, Stimmenpr. bzw. Art der Ausgabe
+  - [x] Notenausgaben aus einer Reihe und Gesamtausgaben
+    - wie selbstst. nur Reihe
+  - [x] Manuskripte
+    - als `Manuskript`
+    - Kopisten als `Übersetzer` eintragen
+  - [x] Faksimiles von Musikhandschriften
+    - als `Buch` oder Reihe eintragen
+    - Titel wieder alles rein was, was rein mmuss, und manuell entkursiven
 - [ ] Aufnahmen
   - [ ] CD/LP
   - [ ] DVD, Videos und Filme
@@ -93,6 +99,8 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - manuell den relevanten Teil entkursiven
   - Aufführungsort bei `Ort`
   - Manuell Komma vor Datum
+- Nachdrucke von älteren Notenausgaben
+  - zu spezifisch, vielleicht einfach als `Buch` oder Reihe
 
 ### Rules
 The following additional rules provided by Gardner/Springfeld (p. 262-263):

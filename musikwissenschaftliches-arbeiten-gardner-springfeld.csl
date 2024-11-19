@@ -17,7 +17,7 @@
     <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
-            <if type="book thesis">
+            <if type="book thesis manuscript">
                 <text variable="title" font-style="italic"/>
             </if>
             <else>
@@ -77,6 +77,11 @@
                 </names>    
             </if>
         </choose>  
+    </macro>
+    <macro name="copyist">
+        <names variable="translator">
+            <name delimiter=", " and="text" delimiter-precedes-last="never"/>
+        </names>    
     </macro>
     <macro name="book-journal-title">
         <text prefix="in: " variable="container-title" font-style="italic"/>
@@ -151,6 +156,14 @@
                         <date-part name="month" form="numeric" suffix="."/>
                         <date-part name="year"/>
                     </date>
+                </group>
+            </else-if>
+            <else-if type="manuscript">
+                <group delimiter=", ">
+                    <text variable="genre"/>
+                    <text macro="copyist"/>
+                    <text macro="issued-year"/>
+                    <text variable="call-number"/>
                 </group>
             </else-if>
         </choose>        
