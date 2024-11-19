@@ -116,6 +116,11 @@
                         <text variable="publisher-place"/>
                         <text macro="issued-year"/>
                     </group>
+                    <choose>
+                        <if variable="note">
+                            <text variable="note"/>
+                        </if>
+                    </choose>
                 </group>
             </if>
             <else-if type="thesis">
@@ -177,17 +182,6 @@
             <label variable="locator" form="short"/>
             <number variable="locator"/>
         </group>
-    </macro>
-    <macro name="note">
-        <choose>
-            <if type="book"> <!-- maybe extend -->
-                <choose>
-                    <if variable="note">
-                        <text variable="note"/>
-                    </if>
-                </choose>
-            </if>
-        </choose>
     </macro>
     <!-- FOOTNOTE (type agnostic definition) -->
     <citation>
