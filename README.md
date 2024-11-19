@@ -9,7 +9,7 @@ The correctness of the presented CSL is to be validated via [validator.citations
 ### Scope
 The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265). Under _Expected_ already implemented and to be explored categories are listed, while unachievables are sent down to _Impossible_.
 
-#### Expected
+#### Implemented
 
 - [x] Selbstständige Publikationen
   - [x] Monografien
@@ -98,7 +98,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - `Standard im Archiv`: Anschaffungsdatum
     - `Bibliothekskatalog`: Inventarnummer
 
-#### Impossible
+#### Impossible (/not implemented)
 
 - (Selbstständige Publikationen)
   - Reprints / Nachdrucke
@@ -134,8 +134,7 @@ The following additional rules provided by Gardner/Springfeld (p. 262-263):
 - Bücher/etc. kursiver Titel
 - `>>TITEL<<` bei Aufsätzen/Lexikonartikeln
 - `ERSCHEINUNGSORT ERSCHEINUNGSJAHR`
-- spätere `n`-te Auflage als Hochzahl `<sup>n</sup>YYYY`, bei grundlegender überarbeitung, etwa `n., neubearbeitete Ausgabe`
-- (URL,DOI,URN)
+- bei grundlegender überarbeitung, etwa `n., neubearbeitete Ausgabe`
 
 #### Impossible
 The following section is relevant for users of the CSL, since they have to be applied "by hand" (solution, maybe plugin to preprocess CSL-JSONs?):
@@ -153,17 +152,17 @@ The following section is relevant for users of the CSL, since they have to be ap
 }
 ```
 - Erscheinungsort === Hauptsitz des Verlags
-- Erscheinungsort wird eingedeutscht
+- Erscheinungsort,Uni wird eingedeutscht
 - Korrekte Angabe von URL,DOI,URN bei E-Books
   - again, no string manipulation (its contents is defined in the json field `note`)
   - `Kindle Edition` etc. may be missing
 - Unveröffentlichte oder online publizierte Hochschulschriften
 - Reprints / Nachdrucke korrekt mit "altem" und "neuem" Titel etc.
 - MGG2: `Sachteil`/... muss manuell eingefügt werden
-  - TODO: maybe abuse `Signatur` (`call-number`) to put something between editors and Bd.
 
 ### Misc. TODOs
 - check page sections / only 1 page / etc. (citation and bibliography)
 - check "Kurzform"
 - `DOI` field
+- spätere `n`-te Auflage als Hochzahl `<sup>n</sup>YYYY`
 
