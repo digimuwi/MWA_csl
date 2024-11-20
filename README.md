@@ -4,10 +4,14 @@ A CSL-file for automatic citation in Zotero using the referencing style of: Matt
 ## CSL Validation
 The correctness of the presented CSL is to be validated via [validator.citationstyles.org](https://validator.citationstyles.org/), recommended by [Zotero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step), following the CSL specification of [citationstyles.org](https://citationstyles.org/) (links accessed 2024-11-18).
 
+## Contribution
+- [@JuliusHauth](https://github.com/JuliusHauth)
+- [@thomasxhua](https://github.com/thomasxhua)
+
 ## Outline of Gardner/Springfeld referencing style
 
 ### Scope
-The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265). Under _Expected_ already implemented and to be explored categories are listed, while unachievables are sent down to _Impossible_.
+The expected scope of the CSL follows the citation categories defined by Gardner/Springfeld (p. 264-265). Under _Implemented_ already implemented and to be explored categories are listed, while unachievables are sent down to _Impossible_.
 
 #### Implemented
 
