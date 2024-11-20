@@ -8,12 +8,6 @@
         <updated>2024-11-19T18:23:00+01:00</updated>
     </info>
     <locale xml:lang="de"/>
-    <!--<locale xml:lang="de">-->
-        <!--<terms>-->
-            <!-- <term name="no date">o. J.</term> TODO: needed? -->
-            <!-- TODO: maybe magic literals? -->
-        <!--</terms>-->
-    <!--</locale>-->
     <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
@@ -299,7 +293,6 @@
                             <text macro="title"/>
                             <text macro="edition"/>
                             <text macro="access"/>
-                            <!--<text macro="serie"/>-->
                             <choose>
                                 <if variable="locator">
                                     <text macro="locator-page"/>

@@ -1,5 +1,5 @@
 # MWA_csl
-A CSL file for automatic citation in Zotero using the referencing style of: Matthew Gardner und Sara Springfeld, Musikwissenschaftliches Arbeiten. Eine Einführung, Kassel 2014.
+A CSL-file for automatic citation in Zotero using the referencing style of: Matthew Gardner und Sara Springfeld, Musikwissenschaftliches Arbeiten. Eine Einführung, Kassel 2014.
 
 ## CSL Validation
 The correctness of the presented CSL is to be validated via [validator.citationstyles.org](https://validator.citationstyles.org/), recommended by [Zotero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step), following the CSL specification of [citationstyles.org](https://citationstyles.org/) (links accessed 2024-11-18).
@@ -14,7 +14,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
 - [x] Selbstständige Publikationen
   - [x] Monografien
   - [x] Sammelpublikationen
-    - Hinweis: Alle Editoren auf `Herausgeber` setzen, Autoren weglassen
+    - Alle Editoren auf `Herausgeber` setzen, Autoren weglassen
   - [x] Mehrbändige Bücher
     - Bei `Band` soll nichts eigentragen sein, aber `Anzahl der Bände` ausgefüllt
     - Ein Hinweis wie "Kindle Edition" soll bei Extra eingetragen werden (oder von Hand nachträglich)
@@ -49,9 +49,10 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - Bei Aufsätzen etc., wenn kein `Art.` gewünscht, `Buchteil` auswählen (sonst `Wörterbucheintrag`)
   - [x] Aufsätze in Kongressberichten
   - [x] Aufsätze in Festschriften
-  - [x] Aufsätze in wissenscahftlichen Zeitschriften oder Jahrbüchern
+  - [x] Aufsätze in wissenschaftlichen Zeitschriften oder Jahrbüchern
+    - als `Zeitschriftenartikel`
   - [x] Artikel in Zeitungen oder Magazinen
-    - `Zeitungsartikel` (Achtung, nicht `Zeischriftenartikel`!)
+    - `Zeitungsartikel` (Achtung, nicht `Zeitschriftenartikel`)
       - Name der Zeitung: `Publikation`
   - [x] Textteile aus Notenausgaben
     - Anlage z.B. als `Buch` empfohlen
@@ -78,7 +79,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - [x] CD/LP
     - siehe DVD, Videos und Filme
   - [x] DVD, Videos und Filme
-    - als `Tohnaufnahme`
+    - als `Tonaufnahme`
     - Komponisten als `Komponist`
     - jegliche Performer, Director, etc. als `Darsteller` (`Mitarbeiter` werden ignoriert)
       - und entweder hinter Nachmane `(Regie)` etc. schreiben oder als Literal (`Zu einfachem Feld wechseln`)
@@ -95,7 +96,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
     - `Datum`: Erstelljahr/Datum
     - `Sprache`: Ort (Erstell)
     - `Archiv`: Besitzer
-    - `Standard im Archiv`: Anschaffungsdatum
+    - `Standort im Archiv`: Anschaffungsdatum
     - `Bibliothekskatalog`: Inventarnummer
 
 #### Impossible (/not implemented)
@@ -137,14 +138,15 @@ The following additional rules provided by Gardner/Springfeld (p. 262-263):
 - bei grundlegender überarbeitung, etwa `n., neubearbeitete Ausgabe`
 
 #### Impossible
-The following section is relevant for users of the CSL, since they have to be applied "by hand" (solution, maybe plugin to preprocess CSL-JSONs?):
+The following section is relevant for users of the CSL, since they have to be applied "by hand" (solution, maybe plugin to preprocess CSL-JSONs):
 
+- Manche Imports sind schlecht vorformatiert und müssen angepasst werden
 - Trennung von Titel,Untertitel statt `:` mit `.`
-  - string manipulation using CSL is impossible (solution, maybe plugin preprocessor for citation data))
+  - _string manipulation using CSL is impossible_
 - Title Case
-  - again, no string manipulation
+  - _again, no string manipulation_
 - Behandlung bei >1 Verlag und entsprechend >1 Verlagsort
-  - the csl-json only specifies only `publisher` and `publisher-place` (next to the `original-` form of each of the two); most jsons do something like
+  - _the csl-json only specifies only `publisher` and `publisher-place` (next to the `original-` form of each of the two); most jsons do something like_
 ```json
 {
     "publisher": "Bärenreiter ; Metzler",
@@ -154,9 +156,8 @@ The following section is relevant for users of the CSL, since they have to be ap
 - Erscheinungsort === Hauptsitz des Verlags
 - Erscheinungsort,Uni wird eingedeutscht
 - Korrekte Angabe von URL,DOI,URN bei E-Books
-  - again, no string manipulation (its contents is defined in the json field `note`)
-  - `Kindle Edition` etc. may be missing
-- Unveröffentlichte oder online publizierte Hochschulschriften
+  - _again, no string manipulation (its contents is defined in the json field `note`)_
+  - _`Kindle Edition` etc. may be missing_
 - Reprints / Nachdrucke korrekt mit "altem" und "neuem" Titel etc.
 - MGG2: `Sachteil`/... muss manuell eingefügt werden
 
@@ -165,4 +166,4 @@ The following section is relevant for users of the CSL, since they have to be ap
 - check "Kurzform"
 - `DOI` field
 - spätere `n`-te Auflage als Hochzahl `<sup>n</sup>YYYY`
-
+- Mini-Guide (was ist wo einzutragen, wie ist mit richtigen/schlechten Imports umgehen, ...)
