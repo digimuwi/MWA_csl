@@ -5,7 +5,24 @@
         <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
         <id>http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld</id>
         <link rel="self" href="http://www.zotero.org/styles/musikwissenschaftliches-arbeiten-gardner-springfeld"/>
+        <link rel="documentation" href="https://github.com/digimuwi/MWA_csl"/>
+        <author>
+            <name>Julius Hauth</name>
+        </author>
+        <author>
+            <name>Thomas Hua</name>
+        </author>
+        <contributor>
+            <name>Niels Pfeffer</name>
+        </contributor>
+        <summary>
+            Format following the guidelines of Matthew Gardner and Sara Springfeld,
+            Musikwissenschaftliches Arbeiten. Eine Einführung, Kassel 2014
+            (Bärenreiter Studienbücher Musik, 19), pp. 262-284.
+        </summary>
+        <category field="humanities"/>
         <updated>2024-11-19T18:23:00+01:00</updated>
+        <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="de"/>
     <!-- MACROS (type dependent) -->
