@@ -323,7 +323,11 @@
                         </else-if>
                     </choose>
                 </group>
-                <text macro="serie"/>
+                <choose>
+                    <if position="first">
+                        <text macro="serie"/>
+                    </if>
+                </choose>
             </group>
         </layout>
     </citation>
