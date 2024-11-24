@@ -140,7 +140,7 @@
         <choose>
             <if type="song">
                 <choose>
-                    <if variable="volume">
+                    <if variable="collection-title volume">
                         <group prefix="(" suffix=")" delimiter=", ">
                             <text variable="collection-title"/>
                             <text variable="volume"/>
@@ -150,7 +150,7 @@
             </if>
             <else>
                 <choose>
-                    <if variable="collection-number">
+                    <if variable="collection-title collection-number">
                         <group prefix="(" suffix=")" delimiter=", ">
                             <text variable="collection-title"/>
                             <text variable="collection-number"/>
