@@ -137,17 +137,28 @@
         </group>
     </macro>
     <macro name="serie">
-        <group prefix="(" suffix=")" delimiter=", ">
-            <text variable="collection-title"/>
-            <choose>
-                <if type="song">
-                    <text variable="volume"/>
-                </if>
-                <else>
-                    <text variable="collection-number"/>
-                </else>
-            </choose>
-        </group>
+        <choose>
+            <if type="song">
+                <choose>
+                    <if variable="collection-title volume">
+                        <group prefix="(" suffix=")" delimiter=", ">
+                            <text variable="collection-title"/>
+                            <text variable="volume"/>
+                        </group>
+                    </if>
+                </choose>
+            </if>
+            <else>
+                <choose>
+                    <if variable="collection-title collection-number">
+                        <group prefix="(" suffix=")" delimiter=", ">
+                            <text variable="collection-title"/>
+                            <text variable="collection-number"/>
+                        </group>
+                    </if>
+                </choose>
+            </else>
+        </choose>
     </macro>
     <macro name="edition">
         <choose>
@@ -315,7 +326,10 @@
                         <if position="first">
                             <text macro="author"/>
                             <text macro="title"/>
-                            <text macro="edition"/>
+                            <group delimiter=" ">
+                                <text macro="edition"/>
+                                <text macro="serie"/>
+                            </group>
                             <text macro="access"/>
                             <choose>
                                 <if variable="locator">
@@ -347,7 +361,6 @@
                         </else-if>
                     </choose>
                 </group>
-                <text macro="serie"/>
             </group>
         </layout>
     </citation>
@@ -362,11 +375,13 @@
                 <group delimiter=", ">
                     <text macro="author-bibliography"/>
                     <text macro="title"/>
-                    <text macro="edition"/>
+                    <group delimiter=" ">
+                        <text macro="edition"/>
+                        <text macro="serie"/>
+                    </group>
                     <text macro="access"/>
                     <text macro="page-count"/>
                 </group>
-                <text macro="serie"/>
             </group>
         </layout>
     </bibliography>
