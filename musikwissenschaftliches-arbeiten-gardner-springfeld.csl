@@ -60,9 +60,9 @@
                             <name delimiter=", " and="text" delimiter-precedes-last="never"/>
                         </names>
                     </else-if>
-                </choose>  
+                </choose>
             </else>
-        </choose>  
+        </choose>
     </macro>
     <macro name="author-bibliography">
         <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
@@ -85,9 +85,9 @@
                             <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                         </names>
                     </else-if>
-                </choose>  
+                </choose>
             </else>
-        </choose>  
+        </choose>
     </macro>
     <macro name="editor">
         <!-- [1] This exclusion is needed, since in some cases we want the editors in front -->
@@ -96,14 +96,14 @@
                 <text value="hrsg. von "/>
                 <names variable="editor">
                     <name delimiter=", " and="text" delimiter-precedes-last="never"/>
-                </names>    
+                </names>
             </if>
-        </choose>  
+        </choose>
     </macro>
     <macro name="copyist">
         <names variable="translator">
             <name delimiter=", " and="text" delimiter-precedes-last="never"/>
-        </names>    
+        </names>
     </macro>
     <macro name="book-journal-title">
         <text prefix="in: " variable="container-title" font-style="italic"/>
@@ -159,14 +159,14 @@
             </else-if>
             <else-if type="thesis">
                 <group delimiter=", ">
-                    <group delimiter=" ">    
+                    <group delimiter=" ">
                         <text variable="genre"/>
                         <text variable="publisher"/>
                     </group>
                     <text macro="issued-year"/>
                 </group>
             </else-if>
-            <else-if type="article-journal">    
+            <else-if type="article-journal">
                 <group delimiter=" ">
                     <text macro="book-journal-title"/>
                     <group delimiter="/">
@@ -176,7 +176,7 @@
                     <text macro="issued-year" prefix="(" suffix=")"/>
                 </group>
             </else-if>
-            <else-if type="article-newspaper">    
+            <else-if type="article-newspaper">
                 <group delimiter=", ">
                     <choose>
                         <if variable="title">
@@ -222,7 +222,7 @@
                     <text variable="source"/>
                 </group>
             </else-if>
-        </choose>        
+        </choose>
     </macro>
     <macro name="access">
         <group delimiter=" ">
@@ -286,7 +286,7 @@
     <citation>
         <layout suffix="." delimiter="; ">
             <group delimiter=" ">
-                <group delimiter=", ">      
+                <group delimiter=", ">
                     <choose>
                         <if position="first">
                             <text macro="author"/>
@@ -310,7 +310,7 @@
                             <text macro="author"/>
                             <choose>
                                 <if variable="title-short">
-                                    <text macro="short-title"/>    
+                                    <text macro="short-title"/>
                                 </if>
                                 <else>
                                     <text macro="title"/>
@@ -332,12 +332,12 @@
         </sort>
         <layout suffix=".">
             <group delimiter=" ">
-                <group delimiter=", ">      
+                <group delimiter=", ">
                     <text macro="author-bibliography"/>
                     <text macro="title"/>
                     <text macro="edition"/>
                     <text macro="access"/>
-                    <text macro="page-count"/>    
+                    <text macro="page-count"/>
                 </group>
                 <text macro="serie"/>
             </group>
