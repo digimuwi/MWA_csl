@@ -241,11 +241,22 @@
             </else-if>
         </choose>
     </macro>
+    <macro name="access-date">
+        <date variable="accessed" prefix="abgerufen am ">
+            <date-part name="day" suffix="."/>
+            <date-part name="month" form="numeric" suffix="."/>
+            <date-part name="year"/>
+        </date>
+    </macro>
     <macro name="access">
         <group delimiter=" ">
             <group delimiter=", ">
                 <choose>
-                    <if variable="URL">
+                    <if variable="DOI">
+                        <text variable="DOI" prefix="http://dx.doi.org/"/>
+                        <text macro="access-date"/>
+                    </if>
+                    <else-if variable="URL">
                         <text variable="URL"/>
                         <choose>
                             <if type="webpage post-weblog">
@@ -266,12 +277,8 @@
                                 </group>
                             </if>
                         </choose>
-                        <date variable="accessed" prefix="abgerufen am ">
-                            <date-part name="day" suffix="."/>
-                            <date-part name="month" form="numeric" suffix="."/>
-                            <date-part name="year"/>
-                        </date>
-                    </if>
+                        <text macro="access-date"/>
+                    </else-if>
                 </choose>
             </group>
         </group>
