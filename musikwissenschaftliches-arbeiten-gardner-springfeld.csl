@@ -44,15 +44,11 @@
                     </else>
                 </choose>
             </else-if>
+            <else-if type="entry-dictionary entry-encyclopedia">
+                <text prefix="Art. &#187;" suffix="&#171;" variable="title"/>
+            </else-if>
             <else>
-                <choose>
-                    <if type="entry-dictionary">
-                        <text prefix="Art. &#187;" suffix="&#171;" variable="title"/>
-                    </if>
-                    <else>
-                        <text prefix="&#187;" suffix="&#171;" variable="title"/>
-                    </else>
-                </choose>
+                <text prefix="&#187;" suffix="&#171;" variable="title"/>
             </else>
         </choose>
     </macro>
@@ -299,15 +295,11 @@
             <if type="book">
                 <text variable="title-short" font-style="italic"/>
             </if>
+            <else-if type="entry-dictionary entry-encyclopedia">
+                <text prefix="Art. &#187;" suffix="&#171;" variable="title-short"/>
+            </else-if>
             <else>
-                <choose>
-                    <if type="entry-dictionary">
-                        <text prefix="Art. &#187;" suffix="&#171;" variable="title-short"/>
-                    </if>
-                    <else>
-                        <text prefix="&#187;" suffix="&#171;" variable="title-short"/>
-                    </else>
-                </choose>
+                <text prefix="&#187;" suffix="&#171;" variable="title-short"/>
             </else>
         </choose>
     </macro>
