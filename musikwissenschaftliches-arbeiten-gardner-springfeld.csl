@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style class="note" version="1.0" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
+<style class="note" version="1.0" demote-non-dropping-particle="never"
+    xmlns="http://purl.org/net/xbiblio/csl">
     <!-- CSL description -->
     <info>
         <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
@@ -44,15 +45,11 @@
                     </else>
                 </choose>
             </else-if>
+            <else-if type="entry-dictionary entry-encyclopedia">
+                <text prefix="Art. &#187;" suffix="&#171;" variable="title"/>
+            </else-if>
             <else>
-                <choose>
-                    <if type="entry-dictionary">
-                        <text prefix="Art. &#187;" suffix="&#171;" variable="title"/>
-                    </if>
-                    <else>
-                        <text prefix="&#187;" suffix="&#171;" variable="title"/>
-                    </else>
-                </choose>
+                <text prefix="&#187;" suffix="&#171;" variable="title"/>
             </else>
         </choose>
     </macro>
@@ -165,7 +162,14 @@
             <if type="chapter book entry-dictionary entry-encyclopedia">
                 <group delimiter=", ">
                     <text macro="book-journal-title"/>
-                    <text variable="edition"/>
+
+                    <!-- non-numeric edition, e.g. "zweite und verbesserte Auflage" -->
+                    <choose>
+                        <if is-numeric="edition" />
+                        <else>
+                            <text variable="edition"/>
+                        </else>
+                    </choose>
                     <text macro="editor"/>
                     <choose>
                         <if variable="volume">
@@ -177,7 +181,15 @@
                     </choose>
                     <group delimiter=" ">
                         <text variable="publisher-place"/>
-                        <text macro="issued-year"/>
+
+                        <group>
+                            <choose>
+                                <if is-numeric="edition">
+                                    <text variable="edition" vertical-align="sup" />
+                                </if>
+                            </choose>
+                            <text macro="issued-year"/>
+                        </group>
                     </group>
                     <text variable="note"/>
                 </group>
@@ -299,15 +311,11 @@
             <if type="book">
                 <text variable="title-short" font-style="italic"/>
             </if>
+            <else-if type="entry-dictionary entry-encyclopedia">
+                <text prefix="Art. &#187;" suffix="&#171;" variable="title-short"/>
+            </else-if>
             <else>
-                <choose>
-                    <if type="entry-dictionary">
-                        <text prefix="Art. &#187;" suffix="&#171;" variable="title-short"/>
-                    </if>
-                    <else>
-                        <text prefix="&#187;" suffix="&#171;" variable="title-short"/>
-                    </else>
-                </choose>
+                <text prefix="&#187;" suffix="&#171;" variable="title-short"/>
             </else>
         </choose>
     </macro>
@@ -347,7 +355,7 @@
                         <else-if position="ibid">
                             <text term="ibid"/>
                         </else-if>
-                       <else-if position="subsequent">
+                        <else-if position="subsequent">
                             <text macro="author"/>
                             <choose>
                                 <if variable="title-short">
