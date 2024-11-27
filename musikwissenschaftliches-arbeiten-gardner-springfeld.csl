@@ -128,10 +128,17 @@
         </date>
     </macro>
     <macro name="page-count">
-        <group delimiter=" ">
-            <text term="page" form="short"/>
-            <text variable="page"/>
-        </group>
+        <choose>
+            <if is-numeric="page">
+                <group delimiter=" ">
+                    <text term="page" form="short"/>
+                    <text variable="page"/>
+                </group>
+            </if>
+            <else>
+                <text variable="page"/>
+            </else>
+        </choose>
     </macro>
     <macro name="serie">
         <choose>
@@ -173,7 +180,14 @@
                     <text macro="editor"/>
                     <choose>
                         <if variable="volume">
-                            <text prefix="Bd. " variable="volume"/>
+                            <choose>
+                                <if is-numeric="volume">
+                                    <text prefix="Bd. " variable="volume"/>
+                                </if>
+                                <else>
+                                    <text variable="volume"/>
+                                </else>
+                            </choose>
                         </if>
                         <else-if variable="number-of-volumes">
                             <text variable="number-of-volumes" suffix=" Bde."/>
