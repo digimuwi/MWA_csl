@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () =>
                     count = 0;
             });
         }
-        return temp.map(p => p["lbl"].reduce((acc,n) => acc+(acc===""?"":".")+n.toString(),""));
+        return temp.map(p => p["lbl"].join("."));
     })();
     // fill it up
     for (let i=0; i<headings_dom.length; ++i)
