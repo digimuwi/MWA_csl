@@ -1,2 +1,2 @@
-pandoc --template=template.html mwa_csl_guide.tex -o mwa_csl_guide.html
+pandoc --template=template.html --number-sections mwa_csl_guide.tex -o mwa_csl_guide.html
 
