@@ -1,21 +1,63 @@
 \documentclass{article}
-% includes
+% --- INCLUDES ---
 \usepackage{graphicx}
 \usepackage{geometry}
-% formatting
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+% --- FORMATTING ---
+% info
+\newcommand{\mytitle}{How To Zotero: Gardner/Springfeld-CSL}
+\title{\mytitle}
+% page formatting
 \geometry{a4paper}
 \newcommand{\msize}{2.5cm}
 \geometry{left=\msize, right=\msize, top=\msize, bottom=\msize}
 \frenchspacing
-\title{Yoyoyo!}
-% commands
-% document
+% colors
+\definecolor{unituebingenred}{RGB}{161,30,59}
+% header and footer text
+\fancyhf{}
+\fancyhead[L]{\textcolor{unituebingenred}{\leftmark}}
+\fancyhead[R]{\textcolor{unituebingenred}{\scshape{\mytitle}}}
+\fancyfoot[CO]{-\ \thepage\ -}
+% header and footer line
+\let\oldheadrule\headrule
+\renewcommand{\headrule}{\color{unituebingenred}\oldheadrule}
+\let\oldfootrule\footrule
+\renewcommand{\footrule}{\color{unituebingenred}\oldfootrule}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+% counters
+\setcounter{page}{0}
+% html specific
+% ATTENTION: when compiling to html, preprocessor/build needed to remove them and their contents
+% --- COMMANDS ---
+
+% --- CONDITIONAL COMPILATION ---
+\newif\ifhtml
+\newcommand{\htmlonly}[1]{\ifhtml#1\else\fi}
+\newif\ifpdf
+\newcommand{\pdfonly}[1]{\ifpdf#1\else\fi}
+% to be commented/removed out by preprocessor (NOTE: these should be unique)
+\htmltrue
+\pdftrue
+% --- DOCUMENT ---
 \begin{document}
-\maketitle
-Hallo!
+\pdfonly{
+\begin{center}
+{\LARGE\textbf\mytitle}
+\end{center}
+}
+Im folgenden Text gibt es ein \htmlonly{verstecktes} Gespenst.
+\\
+Aber das Geheimnis ``\pdfonly{hihihi}'' soll nur das PDF kennen. JFK
+\\
+420\htmlonly{69}
+\pdfonly{pdfonly}\htmlonly{htmlonly}
+\pagestyle{fancy}
 \subsubsection{Stern 0.0.1}
 \section{Stern 1}
-Das ist ein Satz. Doch Mr. Punkt soll nicht abgek\"urzt.
+Das ist ein Satz. Doch Mr. Punkt soll nicht abgek\"urzt. Hi!
 \subsection{Stern 1.1}
 \subsection{Stern 1.2}
 \subsubsection{Stern 1.2.1}
