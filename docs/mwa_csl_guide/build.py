@@ -58,6 +58,7 @@ def compile_target(target, text):
             "-o", target_file_name(target),
             "--template=template.html",
             "--number-sections",
+            "--mathjax",
             "--verbose"
         ]
     if command:
