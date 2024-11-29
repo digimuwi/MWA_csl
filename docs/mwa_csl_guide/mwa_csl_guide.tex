@@ -1,5 +1,6 @@
 \documentclass{article}
 % --- INCLUDES ---
+\usepackage[ngerman]{babel}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{xcolor}
@@ -49,7 +50,9 @@
 \newcommand{\htmltag}[3]{#2}
 \fi
 \ifhtml
-\renewenvironment{center}{\htmltagunique{<div class="tex-center">}{\htmltagunique{</div>}}
+\renewenvironment{center}
+	{\htmltagunique{<div class="tex-center">}\item[]}
+	{\htmltagunique{</div>}}
 \fi
 % --- COMMANDS ---
 \newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
@@ -60,7 +63,9 @@
 \begin{center}
 {\LARGE\textbf\mytitle}
 \end{center}
+\tableofcontents
 }
+% TODO: html doesn't support tableofcontents yet!
 Im folgenden Text gibt es ein \htmlonly{verstecktes} Gespenst.
 \\
 Aber das Geheimnis ``\pdfonly{hihihi}'' soll nur das PDF kennen. JFK testet Mathe:
