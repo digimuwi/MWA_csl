@@ -7,10 +7,8 @@
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{hyperref}
 % --- FORMATTING ---
-% info
-\newcommand{\mytitle}{How To Zotero: Gardner/Springfeld-CSL}
-\title{\mytitle}
 % page formatting
 \geometry{a4paper}
 \newcommand{\msize}{2.5cm}
@@ -57,36 +55,25 @@
 % --- COMMANDS ---
 \newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
 \newcommand{\inclc}[2]{\begin{center}\incl{#1}{#2}\end{center}}
+\newcommand{\makeauthor}[2]{\href{mailto:#2}{#1}}
+% --- INFO ---
+\newcommand{\mytitle}{How To Zotero: Gardner/Springfeld-CSL}
+\newcommand{\nielspfeffer}{\makeauthor{Niels Pfeffer}{niels.pfeffer@uni-tuebingen.de}}
+\newcommand{\thomashua}{\makeauthor{Thomas Hua}{thomas.hua@student.uni-tuebingen.de}}
+\title{\mytitle}
 % --- DOCUMENT ---
 \begin{document}
 \pdfonly{
 \begin{center}
 {\LARGE\textbf\mytitle}
 \end{center}
-\tableofcontents
 }
-% TODO: html doesn't support tableofcontents yet!
-Im folgenden Text gibt es ein \htmlonly{verstecktes} Gespenst.
-\\
-Aber das Geheimnis ``\pdfonly{hihihi}'' soll nur das PDF kennen. JFK testet Mathe:
-\[
-	\sum_{i=1}^n=\frac{n(n+1)}{2},
-\]
-f\"ur \(n\in\mathbb{N}\).
-420\htmlonly{69}
-\pdfonly{pdfonly} \htmlonly{htmlonly}
-\pagestyle{fancy}
-\subsubsection{Stern 0.0.1}
-\section{Stern 1}
-Das ist ein Satz. Doch \htmltag{<em>}{Mr. Punkt}{</em>} soll nicht abgek\"urzt. Hi! sdjkf skjf skdjf dskfskjf dskj fksd fkdsj fksdj fksdj fskdjf ksdj fksdjf sdkfj sdfk sdkfjsf ksdf jk
-\inclc{0.5}{res/smile.png}
-\subsection{Stern 1.1}
-\subsection{Stern 1.2}
-\subsubsection{Stern 1.2.1}
-\subsection{Stern 1.3}
-\section{Stern 2}
-\subsubsection{Stern 2.0.1}
-\subsection{Stern 2.1}
-\subsubsection{Stern 2.1.1}
+\pdfonly{\begin{center}}
+\nielspfeffer, \thomashua
+\pdfonly{\end{center}}
+\pdfonly{
+\tableofcontents % TODO: html doesn't support tableofcontents yet!
+\newpage
+}
 \end{document}
 
