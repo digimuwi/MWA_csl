@@ -41,7 +41,6 @@ def compile_target(target, text):
     tex_text_target = transform_to_target(target, text)
     tex_path_target = ".temp_"+target+"_"+tex_path
     # temp write
-    print(tex_text_target)
     with open(tex_path_target, "w") as tex_file_target:
         tex_file_target.write(tex_text_target)
     # compile

@@ -34,9 +34,9 @@
 % --- BUILD SYSTEM ---
 % conditional compilation
 \newif\ifhtml
-\newcommand{\htmlonly}[1]{\ifhtml#1\else\fi}
+\newcommand{\htmlonly}[1]{\ifhtml#1\fi}
 \newif\ifpdf
-\newcommand{\pdfonly}[1]{\ifpdf#1\else\fi}
+\newcommand{\pdfonly}[1]{\ifpdf#1\fi}
 % to be commented/removed out by preprocessor (NOTE: these should be unique)
 \htmltrue
 \pdftrue
@@ -48,13 +48,12 @@
 \newcommand{\htmltagunique}[1]{}
 \newcommand{\htmltag}[3]{#2}
 \fi
+\ifhtml
+\renewenvironment{center}{\htmltagunique{<div class="tex-center">}{\htmltagunique{</div>}}
+\fi
 % --- COMMANDS ---
 \newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
-\ifhtml
-\newcommand{\inclc}[2]{\htmltag{<div class="tex-center">}{\incl{#1}{#2}}{</div>}}
-\else
 \newcommand{\inclc}[2]{\begin{center}\incl{#1}{#2}\end{center}}
-\fi
 % --- DOCUMENT ---
 \begin{document}
 \pdfonly{
@@ -70,7 +69,7 @@ Aber das Geheimnis ``\pdfonly{hihihi}'' soll nur das PDF kennen. JFK testet Math
 \]
 f\"ur \(n\in\mathbb{N}\).
 420\htmlonly{69}
-\pdfonly{pdfonly}\htmlonly{htmlonly}
+\pdfonly{pdfonly} \htmlonly{htmlonly}
 \pagestyle{fancy}
 \subsubsection{Stern 0.0.1}
 \section{Stern 1}
