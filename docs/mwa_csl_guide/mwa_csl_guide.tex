@@ -29,11 +29,8 @@
 \renewcommand{\footrulewidth}{1pt}
 % counters
 \setcounter{page}{0}
-% html specific
-% ATTENTION: when compiling to html, preprocessor/build needed to remove them and their contents
-% --- COMMANDS ---
-
-% --- CONDITIONAL COMPILATION ---
+% --- BUILD SYSTEM ---
+% conditional compilation
 \newif\ifhtml
 \newcommand{\htmlonly}[1]{\ifhtml#1\else\fi}
 \newif\ifpdf
@@ -41,6 +38,21 @@
 % to be commented/removed out by preprocessor (NOTE: these should be unique)
 \htmltrue
 \pdftrue
+% html unmask
+\ifhtml
+\newcommand{\htmltagunique}[1]{htmlunmask\{#1\}}
+\newcommand{\htmltag}[3]{\htmltagunique{#1}#2\htmltagunique{#3}}
+\else
+\newcommand{\htmltagunique}[1]{}
+\newcommand{\htmltag}[3]{#2}
+\fi
+% --- COMMANDS ---
+\newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
+\ifhtml
+\newcommand{\inclc}[2]{\htmltag{<div class="tex-center">}{\incl{#1}{#2}}{</div>}}
+\else
+\newcommand{\inclc}[2]{\begin{center}\incl{#1}{#2}\end{center}}
+\fi
 % --- DOCUMENT ---
 \begin{document}
 \pdfonly{
@@ -57,7 +69,8 @@ Aber das Geheimnis ``\pdfonly{hihihi}'' soll nur das PDF kennen. JFK
 \pagestyle{fancy}
 \subsubsection{Stern 0.0.1}
 \section{Stern 1}
-Das ist ein Satz. Doch Mr. Punkt soll nicht abgek\"urzt. Hi!
+Das ist ein Satz. Doch \htmltag{<em>}{Mr. Punkt}{</em>} soll nicht abgek\"urzt. Hi! sdjkf skjf skdjf dskfskjf dskj fksd fkdsj fksdj fksdj fskdjf ksdj fksdjf sdkfj sdfk sdkfjsf ksdf jk
+\inclc{0.5}{res/smile.png}
 \subsection{Stern 1.1}
 \subsection{Stern 1.2}
 \subsubsection{Stern 1.2.1}
