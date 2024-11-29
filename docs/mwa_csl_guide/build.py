@@ -54,9 +54,14 @@ def compile_target(target, text):
         subprocess.run(command)
     # temp clean
     os.remove(tex_path_target)
-        
-with open(tex_path, "r") as tex_file:
-    tex_text = tex_file.read()
-    compile_target(TARGET_PDF, tex_text)
-    compile_target(TARGET_HTML, tex_text)
+
+# TODO: support command line options (target choice, ...)
+def main():
+    with open(tex_path, "r") as tex_file:
+        tex_text = tex_file.read()
+        compile_target(TARGET_PDF, tex_text)
+        compile_target(TARGET_HTML, tex_text)
+
+if __name__ == "__main__":
+    main()
 

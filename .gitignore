@@ -2,4 +2,5 @@ Exportierte Einträge.json
 **/*.aux
 **/*.log
 **/*.out
+**/build.bat
 
