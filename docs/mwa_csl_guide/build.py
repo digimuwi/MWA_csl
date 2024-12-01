@@ -53,7 +53,8 @@ def compile_target(target, text):
         ]
     elif target == TARGET_HTML:
         command = [
-            "pandoc", tex_path_target,
+            "pandoc",
+            tex_path_target,
             "-o", target_file_name(target),
             "--template=template.html",
             "--number-sections",
@@ -78,6 +79,7 @@ def postprocess_target(target):
         with open(target_file_name(target), "r", encoding="utf-8") as target_file:
             target_text = target_file.read()
         with open(target_file_name(target), "w", encoding="utf-8") as target_file:
+            # for html tags
             target_text = re.sub(r"htmlunmask\{(.*?)\}", lambda m: html.unescape(m.group(1)), target_text)
             target_file.write(target_text)
 

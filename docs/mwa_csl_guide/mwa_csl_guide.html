@@ -25,6 +25,7 @@ Gardner/Springfeld-CSL">
 <link rel="stylesheet" href="main.css">
 <script src="slideshow.js"></script>  
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>MathJax={options:{enableMenu:false}};</script>
 </head>
 <body>
 <header class="site-header" role="banner">
@@ -45,8 +46,123 @@ Gardner/Springfeld-CSL">
 <main class="page-content" aria-label="Content">
 <div class="wrapper">
 <h1>How To Zotero: Gardner/Springfeld-CSL</h1>
-<p><a href="mailto:niels.pfeffer@uni-tuebingen.de">Niels Pfeffer</a>, <a
-href="mailto:thomas.hua@student.uni-tuebingen.de">Thomas Hua</a></p>
+<p><a href="mailto:niels.pfeffer@uni-tuebingen.de"><span
+style="color: unituebingenred">Niels Pfeffer</span></a>, <a
+href="mailto:thomas.hua@student.uni-tuebingen.de"><span
+style="color: unituebingenred">Thomas Hua</span></a>, letzte Änderung am
+30. November 2024.</p>
+<h1 data-number="1" id="einleitung"><span
+class="header-section-number">1</span> Einleitung</h1>
+<h2 data-number="1.1" id="hinweise-zu-diesem-dokument"><span
+class="header-section-number">1.1</span> Hinweise zu diesem
+Dokument</h2>
+<h3 class="unnumbered" id="zur-form">Zur Form</h3>
+<p>Dieses Dokument liegt in einer hybriden Form vor. <span
+style="color: red">TODO: links</span></p>
+<h3 class="unnumbered" id="zur-sprachverwendung">Zur
+Sprachverwendung</h3>
+<p>In diesem Dokument wird das <a
+href="https://de.wikipedia.org/wiki/Generisches_Maskulinum"><span
+style="color: unituebingenred"><em>generische Maskulinum</em></span></a>
+verwendet, um alle Geschlechter anzusprechen. Begriffe wie “Autor” oder
+“Herausgeber” sind damit als geschlechterneutral zu verstehen. Die hier
+gewählte Form wird in Anlehnung an die aktuellste deutschsprachige
+Zotero-Version und den zugrunde liegenden Text<span
+style="color: unituebingenred"><a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a></span> der
+Gardner/Springfeld-CSL verwendet.</p>
+<p>Diese Entscheidung ist nicht als wertend zu deuten (für Interessierte
+liefert Philipp Hübl eine umfassende Diskussion zum Thema in seiner
+Vorlesung <a href="https://www.youtube.com/watch?v=yvMGFeQ1gsI"><span
+style="color: unituebingenred"><em>Bullshit-Resistenz</em></span></a>).</p>
+<h3 class="unnumbered" id="ein-wegweiser">Ein Wegweiser</h3>
+<p>Besonders empfiehlt sich das Lesen des Kapitels <a
+href="#haeufige_probleme"><span style="color: unituebingenred">Häufige
+Probleme</span></a>. Eine relativ knappe übersicht des</p>
+<h1 data-number="2" id="guide"><span
+class="header-section-number">2</span> Guide</h1>
+<h2 data-number="2.1"
+id="wie-installiere-ich-das-gardnerspringfeld-zitierschema"><span
+class="header-section-number">2.1</span> Wie installiere ich das
+Gardner/Springfeld-Zitierschema?</h2>
+<p>In diesem Guide wird davon ausgegangen, dass bei Sie das
+Literaturverwaltungsprogramm <em>Zotero</em> bereits installiert haben.
+Sollte das nicht der Fall sein, finden Sie eine kleine Anleitung dazu
+auf der <a href="https://www.zotero.org/support/installation"><span
+style="color: unituebingenred">Zotero-Homepage</span></a>.</p>
+<p>In Zotero werden Zitierstile mit <code>.csl</code>-Dateien definiert.
+Die aktuellste Version der <em>Gardner/Springfeld-CSL</em> finden Sie im
+offiziellen <a href="https://github.com/digimuwi/MWA_csl"><span
+style="color: unituebingenred">GitHub-Repository</span></a> unter <a
+href="https://github.com/digimuwi/MWA_csl/blob/main/musikwissenschaftliches-arbeiten-gardner-springfeld.csl"><span
+style="color: unituebingenred">musikwissenschaftliches-arbeiten-gardner-springfeld.csl</span></a>.
+Dort können Sie mit einem Klick auf den Downloadknopf die Datei
+herunterladen. <div class="tex-center"></p>
+<p><div class="tex-center"></p>
+<p><img src="res/github_download.png" style="width:80.0%"
+alt="image" /></div></div>
+Navigieren Sie in Zotero unter <em>Bearbeiten <span
+class="math inline">\(\rightarrow\)</span> Einstellungen</em> auf den
+<em>Zitieren</em>-Reiter. Dort sehen Sie eine Übersicht bereits
+installierter Zitierstile. Mit einem Klick auf den “+”-Knopf öffnet sich
+ein Dateiauswahldialog. Navigieren Sie dort zu der gerade
+runtergeladenen <code>.csl</code>-Datei und öffnen Sie diese.
+<div class="tex-center"></p>
+<p><div class="tex-center"></p>
+<p><img src="res/zitieren_plus.png" style="width:60.0%"
+alt="image" /></div></div> Das
+sollte den Zitierstil unter dem Namen “Musikwissenschaftliches Arbeiten
+Gardner/Springfeld” installiert haben (sind bereits einige Zitierstile
+vorhanden, müssen Sie ggf. etwas in der Übersicht herunterscrollen).</p>
+<h2 data-number="2.2" id="wie-lege-ich-eine-neue-literatur-an"><span
+class="header-section-number">2.2</span> Wie lege ich eine neue
+Literatur an?</h2>
+<p>Um einen eine Literatur einzutragen, finden Sie zuer</p>
+<h3 data-number="2.2.1"
+id="wie-erkenne-ich-um-welche-publikationsform-es-sich-handelt"><span
+class="header-section-number">2.2.1</span> Wie erkenne ich, um welche
+Publikationsform es sich handelt?</h3>
+<h3 data-number="2.2.2" id="wie-erstelle-ich-einen-neuen-eintrag"><span
+class="header-section-number">2.2.2</span> Wie erstelle ich einen neuen
+Eintrag?</h3>
+<h3 data-number="2.2.3"
+id="wie-kann-ich-literatur-automatisch-importieren"><span
+class="header-section-number">2.2.3</span> Wie kann ich Literatur
+automatisch importieren?</h3>
+<p>Es ist wichtig jede automatische Publikation anhand</p>
+<h3 data-number="2.2.4" id="haeufige_probleme"><span
+class="header-section-number">2.2.4</span> Häufige Probleme</h3>
+<h2 data-number="2.3" id="wie-binde-ich-ein-zitat-extern-ein"><span
+class="header-section-number">2.3</span> Wie binde ich ein Zitat extern
+ein?</h2>
+<h1 data-number="3" id="der-gardnerspringfeld-standard"><span
+class="header-section-number">3</span> Der
+Gardner/Springfeld-Standard</h1>
+<h2 data-number="3.1" id="allgemeine-regeln"><span
+class="header-section-number">3.1</span> Allgemeine Regeln</h2>
+<h2 data-number="3.2" id="selbstständige-publikationen"><span
+class="header-section-number">3.2</span> Selbstständige
+Publikationen</h2>
+<h2 data-number="3.3"
+id="unselbstständige-publikationen-aufsätze-artikel-kleinere-beiträge"><span
+class="header-section-number">3.3</span> Unselbstständige Publikationen:
+Aufsätze, Artikel, kleinere Beiträge</h2>
+<h2 data-number="3.4" id="internetinhalte"><span
+class="header-section-number">3.4</span> Internetinhalte</h2>
+<h2 data-number="3.5" id="noten"><span
+class="header-section-number">3.5</span> Noten</h2>
+<h2 data-number="3.6" id="aufnahmen"><span
+class="header-section-number">3.6</span> Aufnahmen</h2>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Matthew Gardner und Sara Springfeld,
+Leitfaden für bibliografische Angaben, in: <em>Musikwissenschaftlichen
+Arbeiten. Eine Einführung</em>, Kassel 2014.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <a class="project-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">zur Anwendung</a>
 <a class="project-link" href="https://www.digimuwi.uni-tuebingen.de/start/projects/">zurück zur Projektübersicht</a>
 </div>

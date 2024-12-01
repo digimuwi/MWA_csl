@@ -8,28 +8,38 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[T1]{fontenc}
 % --- FORMATTING ---
 % page formatting
 \geometry{a4paper}
 \newcommand{\msize}{2.5cm}
 \geometry{left=\msize, right=\msize, top=\msize, bottom=\msize}
 \frenchspacing
+\linespread{1.2}
 % colors
 \definecolor{unituebingenred}{RGB}{161,30,59}
 % header and footer text
 \fancyhf{}
-\fancyhead[L]{\textcolor{unituebingenred}{\leftmark}}
-\fancyhead[R]{\textcolor{unituebingenred}{\scshape{\mytitle}}}
-\fancyfoot[CO]{-\ \thepage\ -}
+\fancyhead[L]{\small\textcolor{unituebingenred}{\leftmark}}
+\fancyhead[R]{\small\textcolor{unituebingenred}{\mytitle}}
+\fancyfoot[CO]{\thepage}
 % header and footer line
 \let\oldheadrule\headrule
 \renewcommand{\headrule}{\color{unituebingenred}\oldheadrule}
-\let\oldfootrule\footrule
-\renewcommand{\footrule}{\color{unituebingenred}\oldfootrule}
 \renewcommand{\headrulewidth}{1pt}
-\renewcommand{\footrulewidth}{1pt}
+%\let\oldfootrule\footrule
+%\renewcommand{\footrule}{\color{unituebingenred}\oldfootrule}
+%\renewcommand{\footrulewidth}{1pt}
 % counters
 \setcounter{page}{0}
+\setcounter{tocdepth}{2}
+% recolorings
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\textcolor{unituebingenred}{#2}}}
+\let\oldfootnote\footnote
+\renewcommand{\footnote}[1]{\textcolor{unituebingenred}{\oldfootnote{#1}}}
+\let\oldhyperref\hyperref
+\renewcommand{\hyperref}[2]{\oldhyperref[#1]{\textcolor{unituebingenred}{#2}}}
 % --- BUILD SYSTEM ---
 % conditional compilation
 \newif\ifhtml
@@ -53,6 +63,7 @@
 	{\htmltagunique{</div>}}
 \fi
 % --- COMMANDS ---
+\newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}
 \newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
 \newcommand{\inclc}[2]{\begin{center}\incl{#1}{#2}\end{center}}
 \newcommand{\makeauthor}[2]{\href{mailto:#2}{#1}}
@@ -63,17 +74,13 @@
 \title{\mytitle}
 % --- DOCUMENT ---
 \begin{document}
-\pdfonly{
-\begin{center}
-{\LARGE\textbf\mytitle}
-\end{center}
-}
-\pdfonly{\begin{center}}
-\nielspfeffer, \thomashua
-\pdfonly{\end{center}}
-\pdfonly{
-\tableofcontents % TODO: html doesn't support tableofcontents yet!
+\input{src/titlepage}
 \newpage
-}
+\pagestyle{fancy}
+\input{src/einleitung}
+\newpage
+\input{src/guide}
+\newpage
+\input{src/der_gardner_springfeld_standard}
 \end{document}
 
