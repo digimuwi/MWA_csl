@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style class="note" version="1.0" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
+<style class="note" version="1.0" demote-non-dropping-particle="never"
+    xmlns="http://purl.org/net/xbiblio/csl">
     <!-- CSL description -->
     <info>
         <title>Musikwissenschaftliches Arbeiten Gardner/Springfeld</title>
@@ -17,8 +18,8 @@
         </contributor>
         <summary>
             Format following the guidelines of Matthew Gardner and Sara Springfeld,
-            Musikwissenschaftliches Arbeiten. Eine Einführung, Kassel 2014
-            (Bärenreiter Studienbücher Musik, 19), pp. 262-284.
+            Musikwissenschaftliches Arbeiten. Eine Einf&#252;hrung, Kassel 2014
+            (B&#228;renreiter Studienb&#252;cher Musik, 19), pp. 262-284.
         </summary>
         <category field="humanities"/>
         <updated>2024-11-19T18:23:00+01:00</updated>
@@ -29,7 +30,7 @@
     <macro name="title">
         <choose>
             <if type="book thesis manuscript graphic">
-                <text variable="title" font-style="italic"/>
+                <text variable="title" font-style="italic" text-case="title"/>
             </if>
             <else-if type="song">
                 <choose>
@@ -40,15 +41,15 @@
                         </group>
                     </if>
                     <else>
-                        <text variable="title" font-style="italic"/>
+                        <text variable="title" font-style="italic" text-case="title"/>
                     </else>
                 </choose>
             </else-if>
             <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. &#187;" suffix="&#171;" variable="title"/>
+                <text prefix="Art. &#187;" suffix="&#171;" variable="title" text-case="title"/>
             </else-if>
             <else>
-                <text prefix="&#187;" suffix="&#171;" variable="title"/>
+                <text prefix="&#187;" suffix="&#171;" variable="title" text-case="title"/>
             </else>
         </choose>
     </macro>
@@ -119,7 +120,7 @@
         </names>
     </macro>
     <macro name="book-journal-title">
-        <text prefix="in: " variable="container-title" font-style="italic"/>
+        <text prefix="in: " variable="container-title" font-style="italic" text-case="title"/>
     </macro>
     <macro name="issued-year">
         <date variable="issued">
@@ -127,10 +128,17 @@
         </date>
     </macro>
     <macro name="page-count">
-        <group delimiter=" ">
-            <text term="page" form="short"/>
-            <text variable="page"/>
-        </group>
+        <choose>
+            <if is-numeric="page">
+                <group delimiter=" ">
+                    <text term="page" form="short"/>
+                    <text variable="page"/>
+                </group>
+            </if>
+            <else>
+                <text variable="page"/>
+            </else>
+        </choose>
     </macro>
     <macro name="serie">
         <choose>
@@ -138,7 +146,7 @@
                 <choose>
                     <if variable="collection-title volume">
                         <group prefix="(" suffix=")" delimiter=", ">
-                            <text variable="collection-title"/>
+                            <text variable="collection-title" text-case="title"/>
                             <text variable="volume"/>
                         </group>
                     </if>
@@ -148,7 +156,7 @@
                 <choose>
                     <if variable="collection-title collection-number">
                         <group prefix="(" suffix=")" delimiter=", ">
-                            <text variable="collection-title"/>
+                            <text variable="collection-title" text-case="title"/>
                             <text variable="collection-number"/>
                         </group>
                     </if>
@@ -161,11 +169,25 @@
             <if type="chapter book entry-dictionary entry-encyclopedia">
                 <group delimiter=", ">
                     <text macro="book-journal-title"/>
-                    <text variable="edition"/>
+
+                    <!-- non-numeric edition, e.g. "zweite und verbesserte Auflage" -->
+                    <choose>
+                        <if is-numeric="edition" />
+                        <else>
+                            <text variable="edition"/>
+                        </else>
+                    </choose>
                     <text macro="editor"/>
                     <choose>
                         <if variable="volume">
-                            <text prefix="Bd. " variable="volume"/>
+                            <choose>
+                                <if is-numeric="volume">
+                                    <text prefix="Bd. " variable="volume"/>
+                                </if>
+                                <else>
+                                    <text variable="volume"/>
+                                </else>
+                            </choose>
                         </if>
                         <else-if variable="number-of-volumes">
                             <text variable="number-of-volumes" suffix=" Bde."/>
@@ -173,13 +195,21 @@
                     </choose>
                     <group delimiter=" ">
                         <text variable="publisher-place"/>
-                        <text macro="issued-year"/>
+
+                        <group>
+                            <choose>
+                                <if is-numeric="edition">
+                                    <text variable="edition" vertical-align="sup" />
+                                </if>
+                            </choose>
+                            <text macro="issued-year"/>
+                        </group>
                     </group>
                     <text variable="note"/>
                 </group>
             </if>
             <else-if type="webpage post-weblog">
-                <text variable="container-title" font-style="italic"/>
+                <text variable="container-title" font-style="italic" text-case="title"/>
             </else-if>
             <else-if type="thesis">
                 <group delimiter=", ">
@@ -207,7 +237,7 @@
                             <text macro="book-journal-title"/>
                         </if>
                         <else>
-                            <text variable="container-title" font-style="italic"/>
+                            <text variable="container-title" font-style="italic" text-case="title"/>
                         </else>
                     </choose>
                     <date variable="issued">
@@ -293,13 +323,13 @@
     <macro name="short-title">
         <choose>
             <if type="book">
-                <text variable="title-short" font-style="italic"/>
+                <text variable="title-short" font-style="italic" text-case="title"/>
             </if>
             <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. &#187;" suffix="&#171;" variable="title-short"/>
+                <text prefix="Art. &#187;" suffix="&#171;" variable="title-short" text-case="title"/>
             </else-if>
             <else>
-                <text prefix="&#187;" suffix="&#171;" variable="title-short"/>
+                <text prefix="&#187;" suffix="&#171;" variable="title-short" text-case="title"/>
             </else>
         </choose>
     </macro>
@@ -339,7 +369,7 @@
                         <else-if position="ibid">
                             <text term="ibid"/>
                         </else-if>
-                       <else-if position="subsequent">
+                        <else-if position="subsequent">
                             <text macro="author"/>
                             <choose>
                                 <if variable="title-short">
