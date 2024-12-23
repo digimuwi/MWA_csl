@@ -62,7 +62,7 @@ def compile_target(target, text):
             "--verbose"
         ]
     if command:
-        print(f"\nStart compilation for target \'{target}\':\n    {" ".join(command)}\n")
+        print(f"\nStart compilation for target '{target}':\n    {' '.join(command)}\n")
         returncode = subprocess.run(command).returncode
         if returncode == 0:
             postprocess_target(target)
