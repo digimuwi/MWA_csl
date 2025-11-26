@@ -50,6 +50,8 @@
 \renewcommand{\footnote}[1]{\textcolor{unituebingenred}{\oldfootnote{#1}}}
 \let\oldhyperref\hyperref
 \renewcommand{\hyperref}[2]{\oldhyperref[#1]{\textcolor{unituebingenred}{#2}}}
+% font
+\renewcommand{\familydefault}{\sfdefault}
 % --- BUILD SYSTEM ---
 % conditional compilation
 \newif\ifhtml
