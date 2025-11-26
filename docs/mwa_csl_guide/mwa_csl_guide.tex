@@ -11,6 +11,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xparse}
+\usepackage{csquotes}
 % --- FORMATTING ---
 % page formatting
 \geometry{a4paper}
@@ -19,16 +22,21 @@
 \frenchspacing
 \linespread{1.2}
 % colors
-\definecolor{unituebingenred}{RGB}{161,30,59}
+%\definecolor{unituebingenred}{RGB}{161,30,59}
+\definecolor{unituebingenred}{RGB}{80,10,20}
 % header and footer text
 \fancyhf{}
-\fancyhead[L]{\small\textcolor{unituebingenred}{\leftmark}}
-\fancyhead[R]{\small\textcolor{unituebingenred}{\mytitle}}
+%\fancyhead[L]{\small\textcolor{unituebingenred}{\leftmark}}
+%\fancyhead[R]{\small\textcolor{unituebingenred}{\mytitle}}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small\mytitle}
 \fancyfoot[CO]{\thepage}
 % header and footer line
 \let\oldheadrule\headrule
-\renewcommand{\headrule}{\color{unituebingenred}\oldheadrule}
-\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\headrule}{\color{unituebingenred}\oldheadrule}
+%\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\oldheadrule}
+\renewcommand{\headrulewidth}{0.1pt}
 %\let\oldfootrule\footrule
 %\renewcommand{\footrule}{\color{unituebingenred}\oldfootrule}
 %\renewcommand{\footrulewidth}{1pt}
@@ -69,6 +77,15 @@
 \newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
 \newcommand{\inclc}[2]{\begin{center}\incl{#1}{#2}\end{center}}
 \newcommand{\makeauthor}[2]{\href{mailto:#2}{#1}}
+\newcommand{\pubtable}[1]{%
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{l|X}
+Feld&Anmerkung\\
+\hline
+#1
+\end{tabularx}
+\end{flushleft}
+}
 % --- INFO ---
 \newcommand{\mytitle}{How To Zotero: Gardner/Springfeld-CSL}
 \newcommand{\nielspfeffer}{\makeauthor{Niels Pfeffer}{niels.pfeffer@uni-tuebingen.de}}
@@ -77,12 +94,13 @@
 % --- DOCUMENT ---
 \begin{document}
 \input{src/titlepage}
-\newpage
 \pagestyle{fancy}
-\input{src/einleitung}
+%\input{src/einleitung}
+%\newpage
+\input{src/basics}
 \newpage
-\input{src/guide}
-\newpage
-\input{src/der_gardner_springfeld_standard}
+\input{src/publikationsformen}
+%\newpage
+%\input{src/der_gardner_springfeld_standard}
 \end{document}
 
