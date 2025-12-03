@@ -1,0 +1,109 @@
+\documentclass{article}
+% --- INCLUDES ---
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xparse}
+\usepackage{csquotes}
+\usepackage{hyperref}
+% --- FORMATTING ---
+% page formatting
+\geometry{a4paper}
+\newcommand{\msize}{2.5cm}
+\geometry{left=\msize, right=\msize, top=\msize, bottom=\msize}
+\frenchspacing
+\linespread{1.2}
+% colors
+%\definecolor{unituebingenred}{RGB}{161,30,59}
+\definecolor{unituebingenred}{RGB}{80,10,20}
+% header and footer text
+\fancyhf{}
+%\fancyhead[L]{\small\textcolor{unituebingenred}{\leftmark}}
+%\fancyhead[R]{\small\textcolor{unituebingenred}{\mytitle}}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small\mytitle}
+\fancyfoot[CO]{\thepage}
+% header and footer line
+\let\oldheadrule\headrule
+%\renewcommand{\headrule}{\color{unituebingenred}\oldheadrule}
+%\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\oldheadrule}
+\renewcommand{\headrulewidth}{0.1pt}
+%\let\oldfootrule\footrule
+%\renewcommand{\footrule}{\color{unituebingenred}\oldfootrule}
+%\renewcommand{\footrulewidth}{1pt}
+% counters
+\setcounter{page}{0}
+\setcounter{tocdepth}{2}
+% recolorings
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\textcolor{unituebingenred}{#2}}}
+\let\oldfootnote\footnote
+\renewcommand{\footnote}[1]{\textcolor{unituebingenred}{\oldfootnote{#1}}}
+\let\oldhyperref\hyperref
+\renewcommand{\hyperref}[2]{\oldhyperref[#1]{\textcolor{unituebingenred}{#2}}}
+% font
+\renewcommand{\familydefault}{\sfdefault}
+% --- BUILD SYSTEM ---
+% conditional compilation
+\newif\ifhtml
+\newcommand{\htmlonly}[1]{\ifhtml#1\fi}
+\newif\ifpdf
+\newcommand{\pdfonly}[1]{\ifpdf#1\fi}
+% to be commented/removed out by preprocessor (NOTE: these should be unique)
+\htmltrue
+\pdftrue
+% html unmask
+\ifhtml
+\newcommand{\htmltagunique}[1]{htmlunmask\{#1\}}
+\newcommand{\htmltag}[3]{\htmltagunique{#1}#2\htmltagunique{#3}}
+\else
+\newcommand{\htmltagunique}[1]{}
+\newcommand{\htmltag}[3]{#2}
+\fi
+\ifhtml
+\renewenvironment{center}
+	{\htmltagunique{<div class="tex-center">}\item[]}
+	{\htmltagunique{</div>}}
+\fi
+% --- COMMANDS ---
+\newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\incl}[2]{\begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}}
+\newcommand{\inclc}[2]{\begin{center}\incl{#1}{#2}\end{center}}
+\newcommand{\makeauthor}[2]{\href{mailto:#2}{#1}}
+\newcommand{\pubtable}[1]{%
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{l|X}
+Feld&Anmerkung\\
+\hline
+#1
+\end{tabularx}
+\end{flushleft}
+}
+% --- INFO ---
+\newcommand{\mytitle}{How To Zotero: Gardner/Springfeld-CSL}
+\newcommand{\nielspfeffer}{\makeauthor{Niels Pfeffer}{niels.pfeffer@uni-tuebingen.de}}
+\newcommand{\thomashua}{\makeauthor{Thomas Hua}{thomas.hua@student.uni-tuebingen.de}}
+\title{\mytitle}
+% --- DOCUMENT ---
+\begin{document}
+\input{src/titlepage}
+\pagestyle{fancy}
+%\input{src/einleitung}
+%\newpage
+\input{src/basics}
+\newpage
+\input{src/publikationsformen}
+%\newpage
+%\input{src/der_gardner_springfeld_standard}
+\end{document}
+
