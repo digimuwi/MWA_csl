@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style class="note" version="1.0" demote-non-dropping-particle="never"
+    default-locale="de-DE"
     xmlns="http://purl.org/net/xbiblio/csl">
     <!-- CSL description -->
     <info>
@@ -22,7 +23,7 @@
             (B&#228;renreiter Studienb&#252;cher Musik, 19), pp. 262-284.
         </summary>
         <category field="humanities"/>
-        <updated>2024-11-19T18:23:00+01:00</updated>
+        <updated>2026-07-23T00:00:00+01:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="de"/>
@@ -290,7 +291,7 @@
             <group delimiter=", ">
                 <choose>
                     <if variable="DOI">
-                        <text variable="DOI" prefix="http://dx.doi.org/"/>
+                        <text variable="DOI" prefix="https://doi.org/"/>
                         <text macro="access-date"/>
                     </if>
                     <else-if variable="URL">
@@ -387,7 +388,7 @@
         </layout>
     </citation>
     <!-- BIBLIOGRAPHY (type agonistic definition)-->
-    <bibliography>
+    <bibliography hanging-indent="true">
         <sort>
             <key variable="author"/>
             <key variable="issued"/>
