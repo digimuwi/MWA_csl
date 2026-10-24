@@ -92,20 +92,20 @@
         <choose>
             <if type="song">
                 <names variable="composer">
-                    <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                    <name delimiter="; " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                 </names>
             </if>
             <else>
                 <choose>
                     <if variable="author">
                         <names variable="author">
-                            <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                            <name delimiter="; " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                         </names>
                     </if>
                     <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
                     <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
                         <names variable="editor" suffix=" (Hrsg.)">
-                            <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                            <name delimiter="; " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                         </names>
                     </else-if>
                 </choose>

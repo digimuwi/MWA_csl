@@ -13,6 +13,11 @@ first:      Annette Kreutziger-Herr und Melanie Unseld (Hrsg.), <i>Musik und Gen
 ibid:       Ebd.
 ibid+loc:   Ebd., S. 18–21.
 subseq+loc: Kreutziger-Herr und Unseld (Hrsg.), <i>Musik und Gender</i>, S. 22.
+== sammel3 (book)
+first:      Anselm Hartinger, Christoph Wolff und Peter Wollny (Hrsg.), <i>Von Bach zu Mendelssohn und Schumann. Aufführungspraxis und Musiklandschaft zwischen Kontinuität und Wandel</i>, Wiesbaden 2012.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Hartinger, Wolff und Wollny (Hrsg.), <i>Von Bach zu Mendelssohn und Schumann</i>, S. 22.
 == multivol (book)
 first:      August Wilhelm Ambros, <i>Geschichte der Musik</i>, 5 Bde., Leipzig 1862.
 ibid:       Ebd.
@@ -134,6 +139,7 @@ Blog, Bert, »Ein Blogbeitrag«, <i>Musikblog</i>, https://example.org/blog/1, g
 Doe, Jane, <i>Music Theory for Beginners</i>, London 2019, Kindle Edition, https://example.org/book, abgerufen am 18.11.2024.
 Art. »Fuge«, in: <i>Riemann Musiklexikon. Sachteil</i>, hrsg. von Hans Heinrich Eggebrecht, Mainz 1967, S. 312–315.
 Gardner, Matthew und Springfeld, Sara, <i>Musikwissenschaftliches Arbeiten. Eine Einführung</i>, Kassel 2014 (Bärenreiter Studienbücher Musik, 19).
+Hartinger, Anselm; Wolff, Christoph und Wollny, Peter (Hrsg.), <i>Von Bach zu Mendelssohn und Schumann. Aufführungspraxis und Musiklandschaft zwischen Kontinuität und Wandel</i>, Wiesbaden 2012.
 Keym, Stefan, »Vom ›revolutionären Te Deum‹ zur ›Marseiller Hymne der Reformation‹. Politische und religiöse Liedzitate in der Instrumentalmusik des 19. Jahrhunderts«, in: <i>Die Musikforschung</i> 65/4 (2012), S. 338–367.
 Konf, Karl, »Bach und die Fuge«, in: <i>Bericht über den Internationalen Musikwissenschaftlichen Kongress Leipzig 2000</i>, hrsg. von Hanna Hrsg, Kassel 2002, S. 100–110.
 Kreutziger-Herr, Annette und Unseld, Melanie (Hrsg.), <i>Musik und Gender</i>, Kassel 2010.
