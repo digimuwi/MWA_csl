@@ -103,6 +103,11 @@ first:      Bert Blog, »Ein Blogbeitrag«, <i>Musikblog</i>, https://example.or
 ibid:       Ebd.
 ibid+loc:   Ebd., S. 18–21.
 subseq+loc: Blog, »Ein Blogbeitrag«, S. 22.
+== score (book)
+first:      Jean Sibelius, <i>Tapiola. Sinfonische Dichtung für Orchester op. 112</i>, Studienpartitur, hrsg. von Carl Ettler, Wiesbaden 1985.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Sibelius, <i>Tapiola</i>, S. 22.
 == ms (manuscript)
 first:      Johann Sebastian Bach, <i>Messe in h-Moll BWV 232</i>, Autograph, Kaspar Kopist, 1749, D-B Mus.ms. Bach P 180.
 ibid:       Ebd.
@@ -154,6 +159,7 @@ Lasso, Orlando di, <i>Prophetiae Sibyllarum</i>, hrsg. von Reinhold Schlötterer
 Magazin, Mia, »Interview mit einer Dirigentin«, in: <i>Der Spiegel</i>, 6.3.2021, S. 120–122.
 Muster, Max, <i>Studien zur Fuge</i>, Diss. Universität Heidelberg, 2003.
 Online, Olga, »Online-Aufsatz«, in: <i>Zeitschrift der Gesellschaft für Musiktheorie</i> 18/1 (2021), https://doi.org/10.31751/1188, abgerufen am 18.11.2024, S. 7–30.
+Sibelius, Jean, <i>Tapiola. Sinfonische Dichtung für Orchester op. 112</i>, Studienpartitur, hrsg. von Carl Ettler, Wiesbaden 1985.
 Stieler, Joseph Karl, <i>Bildnis Beethoven</i>, Öl auf Leinwand, München 1820, 62 × 50 cm, Beethoven-Haus Bonn, https://example.org/img, abgerufen am 18.11.2024.
 »Vorwort«, in: <i>Festschrift für Hans Muster</i>, Laaber 1999, V–VII.
 Walker, Paul M., Art. »Fugue«, in: <i>Grove Music Online</i>, https://doi.org/10.1093/gmo/9781561592630.article.51678, abgerufen am 18.11.2024.
