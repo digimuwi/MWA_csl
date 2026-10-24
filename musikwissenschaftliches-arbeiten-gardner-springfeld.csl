@@ -27,7 +27,14 @@
         <updated>2026-10-24T00:00:00+01:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
-    <locale xml:lang="de"/>
+    <locale xml:lang="de">
+        <terms>
+            <term name="open-quote">&#187;</term>
+            <term name="close-quote">&#171;</term>
+            <term name="open-inner-quote">&#8250;</term>
+            <term name="close-inner-quote">&#8249;</term>
+        </terms>
+    </locale>
     <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
@@ -38,7 +45,7 @@
                 <choose>
                     <if variable="event-place">
                         <group delimiter=", ">
-                            <text prefix="&#187;" suffix="&#171;" variable="title"/>
+                            <text quotes="true" variable="title"/>
                             <text prefix="auf: " variable="event-place" font-style="italic"/>
                         </group>
                     </if>
@@ -48,10 +55,10 @@
                 </choose>
             </else-if>
             <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. &#187;" suffix="&#171;" variable="title" text-case="title"/>
+                <text prefix="Art. " quotes="true" variable="title" text-case="title"/>
             </else-if>
             <else>
-                <text prefix="&#187;" suffix="&#171;" variable="title" text-case="title"/>
+                <text quotes="true" variable="title" text-case="title"/>
             </else>
         </choose>
     </macro>
@@ -362,7 +369,7 @@
             <else-if type="song">
                 <choose>
                     <if variable="event-place">
-                        <text prefix="&#187;" suffix="&#171;" variable="title-short" text-case="title"/>
+                        <text quotes="true" variable="title-short" text-case="title"/>
                     </if>
                     <else>
                         <text variable="title-short" font-style="italic" text-case="title"/>
@@ -370,10 +377,10 @@
                 </choose>
             </else-if>
             <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. &#187;" suffix="&#171;" variable="title-short" text-case="title"/>
+                <text prefix="Art. " quotes="true" variable="title-short" text-case="title"/>
             </else-if>
             <else>
-                <text prefix="&#187;" suffix="&#171;" variable="title-short" text-case="title"/>
+                <text quotes="true" variable="title-short" text-case="title"/>
             </else>
         </choose>
     </macro>

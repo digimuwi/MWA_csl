@@ -63,6 +63,11 @@ first:      Zora Zeit, »Über die Fuge«, in: <i>AfMw</i> 60/2 (2003), S. 101�
 ibid:       Ebd.
 ibid+loc:   Ebd., S. 18–21.
 subseq+loc: Zora Zeit, »Über die Fuge«, S. 22.
+== journal-quotes (article-journal)
+first:      Stefan Keym, »Vom ›revolutionären Te Deum‹ zur ›Marseiller Hymne der Reformation‹. Politische und religiöse Liedzitate in der Instrumentalmusik des 19. Jahrhunderts«, in: <i>Die Musikforschung</i> 65/4 (2012), S. 338–367.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Stefan Keym, »Politische und religiöse Liedzitate«, S. 22.
 == journal-doi (article-journal)
 first:      Olga Online, »Online-Aufsatz«, in: <i>Zeitschrift der Gesellschaft für Musiktheorie</i> 18/1 (2021), https://doi.org/10.31751/1188, abgerufen am 18.11.2024, S. 7–30.
 ibid:       Ebd.
@@ -123,6 +128,7 @@ Blog, Bert, »Ein Blogbeitrag«, <i>Musikblog</i>, https://example.org/blog/1, g
 Doe, Jane, <i>Music Theory for Beginners</i>, London 2019, Kindle Edition, https://example.org/book, abgerufen am 18.11.2024.
 Art. »Fuge«, in: <i>Riemann Musiklexikon. Sachteil</i>, hrsg. von Hans Heinrich Eggebrecht, Mainz 1967, S. 312–315.
 Gardner, Matthew und Springfeld, Sara, <i>Musikwissenschaftliches Arbeiten. Eine Einführung</i>, Kassel 2014 (Bärenreiter Studienbücher Musik, 19).
+Keym, Stefan, »Vom ›revolutionären Te Deum‹ zur ›Marseiller Hymne der Reformation‹. Politische und religiöse Liedzitate in der Instrumentalmusik des 19. Jahrhunderts«, in: <i>Die Musikforschung</i> 65/4 (2012), S. 338–367.
 Konf, Karl, »Bach und die Fuge«, in: <i>Bericht über den Internationalen Musikwissenschaftlichen Kongress Leipzig 2000</i>, hrsg. von Hanna Hrsg, Kassel 2002, S. 100–110.
 Kreutziger-Herr, Annette und Unseld, Melanie (Hrsg.), <i>Musik und Gender</i>, Kassel 2010.
 Kritik, Kurt, »Ein Konzertbericht«, in: <i>Frankfurter Allgemeine Zeitung</i>, 1.2.2020, S. 12.
