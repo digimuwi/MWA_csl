@@ -1,0 +1,12 @@
+{
+  "name": "mwa-csl-test",
+  "private": true,
+  "description": "Renders test items with the Gardner/Springfeld CSL style and compares them with expected.txt",
+  "scripts": {
+    "test": "node render.js",
+    "update": "node render.js --update"
+  },
+  "dependencies": {
+    "citeproc": "2.4.63"
+  }
+}

@@ -22,8 +22,9 @@
             Musikwissenschaftliches Arbeiten. Eine Einf&#252;hrung, Kassel 2014
             (B&#228;renreiter Studienb&#252;cher Musik, 19), pp. 262-284.
         </summary>
+        <category citation-format="note"/>
         <category field="humanities"/>
-        <updated>2026-07-23T00:00:00+01:00</updated>
+        <updated>2026-10-24T00:00:00+01:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="de"/>
@@ -70,7 +71,7 @@
                         </names>
                     </if>
                     <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
-                    <else-if variable="editor">
+                    <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
                         <names variable="editor" suffix=" (Hrsg.)">
                             <name delimiter=", " and="text" delimiter-precedes-last="never"/>
                         </names>
@@ -95,7 +96,7 @@
                         </names>
                     </if>
                     <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
-                    <else-if variable="editor">
+                    <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
                         <names variable="editor" suffix=" (Hrsg.)">
                             <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                         </names>
@@ -104,14 +105,43 @@
             </else>
         </choose>
     </macro>
+    <macro name="sort-author">
+        <!-- Mirrors "author-bibliography"; works without author (or editor) are sorted by their title -->
+        <choose>
+            <if type="song">
+                <names variable="composer">
+                    <substitute>
+                        <text variable="title"/>
+                    </substitute>
+                </names>
+            </if>
+            <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference">
+                <names variable="author">
+                    <substitute>
+                        <text variable="title"/>
+                    </substitute>
+                </names>
+            </else-if>
+            <else>
+                <names variable="author">
+                    <substitute>
+                        <names variable="editor"/>
+                        <text variable="title"/>
+                    </substitute>
+                </names>
+            </else>
+        </choose>
+    </macro>
     <macro name="editor">
         <!-- [1] This exclusion is needed, since in some cases we want the editors in front -->
         <choose>
-            <if variable="author">
-                <text value="hrsg. von "/>
-                <names variable="editor">
-                    <name delimiter=", " and="text" delimiter-precedes-last="never"/>
-                </names>
+            <if variable="author" type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
+                <group>
+                    <text value="hrsg. von "/>
+                    <names variable="editor">
+                        <name delimiter=", " and="text" delimiter-precedes-last="never"/>
+                    </names>
+                </group>
             </if>
         </choose>
     </macro>
@@ -167,7 +197,7 @@
     </macro>
     <macro name="edition">
         <choose>
-            <if type="chapter book entry-dictionary entry-encyclopedia">
+            <if type="chapter book entry-dictionary entry-encyclopedia paper-conference">
                 <group delimiter=", ">
                     <text macro="book-journal-title"/>
 
@@ -223,7 +253,7 @@
             </else-if>
             <else-if type="article-journal">
                 <group delimiter=" ">
-                    <text macro="book-journal-title"/>
+                    <text prefix="in: " variable="container-title" form="short" font-style="italic" text-case="title"/>
                     <group delimiter="/">
                         <text variable="volume"/>
                         <text variable="issue"/>
@@ -231,7 +261,7 @@
                     <text macro="issued-year" prefix="(" suffix=")"/>
                 </group>
             </else-if>
-            <else-if type="article-newspaper">
+            <else-if type="article-newspaper article-magazine">
                 <group delimiter=", ">
                     <choose>
                         <if variable="title">
@@ -258,7 +288,9 @@
             </else-if>
             <else-if type="song">
                 <group delimiter=", ">
-                    <names variable="author" delimiter=", "/>
+                    <names variable="author">
+                        <name delimiter=", " and="text" delimiter-precedes-last="never"/>
+                    </names>
                     <text variable="publisher"/>
                     <text macro="issued-year"/>
                     <text variable="medium"/>
@@ -301,10 +333,10 @@
                                 <group delimiter=" ">
                                     <choose>
                                         <if type="webpage">
-                                            <text value="letzte &#196;nderung "/>
+                                            <text value="letzte &#196;nderung"/>
                                         </if>
                                         <else-if type="post-weblog">
-                                            <text value="gepostet am "/>
+                                            <text value="gepostet am"/>
                                         </else-if>
                                     </choose>
                                     <date variable="issued">
@@ -322,10 +354,21 @@
         </group>
     </macro>
     <macro name="short-title">
+        <!-- ALWAYS KEEP IN MIND THAT "title" and "short-title" should be in sync!-->
         <choose>
-            <if type="book">
+            <if type="book thesis manuscript graphic">
                 <text variable="title-short" font-style="italic" text-case="title"/>
             </if>
+            <else-if type="song">
+                <choose>
+                    <if variable="event-place">
+                        <text prefix="&#187;" suffix="&#171;" variable="title-short" text-case="title"/>
+                    </if>
+                    <else>
+                        <text variable="title-short" font-style="italic" text-case="title"/>
+                    </else>
+                </choose>
+            </else-if>
             <else-if type="entry-dictionary entry-encyclopedia">
                 <text prefix="Art. &#187;" suffix="&#171;" variable="title-short" text-case="title"/>
             </else-if>
@@ -390,8 +433,9 @@
     <!-- BIBLIOGRAPHY (type agonistic definition)-->
     <bibliography hanging-indent="true">
         <sort>
-            <key variable="author"/>
+            <key macro="sort-author"/>
             <key variable="issued"/>
+            <key variable="title"/>
         </sort>
         <layout suffix=".">
             <group delimiter=" ">
