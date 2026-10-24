@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style class="note" version="1.0" demote-non-dropping-particle="never"
+<style class="note" version="1.0" demote-non-dropping-particle="display-and-sort"
     default-locale="de-DE"
     xmlns="http://purl.org/net/xbiblio/csl">
     <!-- CSL description -->
@@ -27,7 +27,14 @@
         <updated>2026-10-24T00:00:00+01:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
-    <locale xml:lang="de"/>
+    <locale xml:lang="de">
+        <terms>
+            <term name="open-quote">&#187;</term>
+            <term name="close-quote">&#171;</term>
+            <term name="open-inner-quote">&#8250;</term>
+            <term name="close-inner-quote">&#8249;</term>
+        </terms>
+    </locale>
     <!-- MACROS (type dependent) -->
     <macro name="title">
         <choose>
@@ -38,7 +45,7 @@
                 <choose>
                     <if variable="event-place">
                         <group delimiter=", ">
-                            <text prefix="&#187;" suffix="&#171;" variable="title"/>
+                            <text quotes="true" variable="title"/>
                             <text prefix="auf: " variable="event-place" font-style="italic"/>
                         </group>
                     </if>
@@ -48,15 +55,15 @@
                 </choose>
             </else-if>
             <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. &#187;" suffix="&#171;" variable="title" text-case="title"/>
+                <text prefix="Art. " quotes="true" variable="title" text-case="title"/>
             </else-if>
             <else>
-                <text prefix="&#187;" suffix="&#171;" variable="title" text-case="title"/>
+                <text quotes="true" variable="title" text-case="title"/>
             </else>
         </choose>
     </macro>
     <macro name="author">
-        <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
+        <!-- ALWAYS KEEP IN MIND THAT "author", "author-bibliography" and "author-short" should be in sync!-->
         <choose>
             <if type="song">
                 <names variable="composer">
@@ -81,24 +88,49 @@
         </choose>
     </macro>
     <macro name="author-bibliography">
-        <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
+        <!-- ALWAYS KEEP IN MIND THAT "author", "author-bibliography" and "author-short" should be in sync!-->
         <choose>
             <if type="song">
                 <names variable="composer">
-                    <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                    <name delimiter="; " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                 </names>
             </if>
             <else>
                 <choose>
                     <if variable="author">
                         <names variable="author">
-                            <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                            <name delimiter="; " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
                         </names>
                     </if>
                     <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
                     <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
                         <names variable="editor" suffix=" (Hrsg.)">
-                            <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                            <name delimiter="; " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                        </names>
+                    </else-if>
+                </choose>
+            </else>
+        </choose>
+    </macro>
+    <macro name="author-short">
+        <!-- ALWAYS KEEP IN MIND THAT "author", "author-bibliography" and "author-short" should be in sync!-->
+        <choose>
+            <if type="song">
+                <names variable="composer">
+                    <name delimiter=", " and="text" delimiter-precedes-last="never" form="short"/>
+                </names>
+            </if>
+            <else>
+                <choose>
+                    <if variable="author">
+                        <names variable="author">
+                            <name delimiter=", " and="text" delimiter-precedes-last="never" form="short"/>
+                        </names>
+                    </if>
+                    <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
+                    <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
+                        <names variable="editor" suffix=" (Hrsg.)">
+                            <name delimiter=", " and="text" delimiter-precedes-last="never" form="short"/>
                         </names>
                     </else-if>
                 </choose>
@@ -200,6 +232,13 @@
             <if type="chapter book entry-dictionary entry-encyclopedia paper-conference">
                 <group delimiter=", ">
                     <text macro="book-journal-title"/>
+                    <!-- reprints: place and year of the original edition -->
+                    <group delimiter=" ">
+                        <text variable="original-publisher-place"/>
+                        <date variable="original-date">
+                            <date-part name="year"/>
+                        </date>
+                    </group>
 
                     <!-- non-numeric edition, e.g. "zweite und verbesserte Auflage" -->
                     <choose>
@@ -355,25 +394,23 @@
     </macro>
     <macro name="short-title">
         <!-- ALWAYS KEEP IN MIND THAT "title" and "short-title" should be in sync!-->
+        <!-- form="short" falls back to the full title; Gardner/Springfeld drop "Art." here (p. 269 f.) -->
         <choose>
             <if type="book thesis manuscript graphic">
-                <text variable="title-short" font-style="italic" text-case="title"/>
+                <text variable="title" form="short" font-style="italic" text-case="title"/>
             </if>
             <else-if type="song">
                 <choose>
                     <if variable="event-place">
-                        <text prefix="&#187;" suffix="&#171;" variable="title-short" text-case="title"/>
+                        <text quotes="true" variable="title" form="short" text-case="title"/>
                     </if>
                     <else>
-                        <text variable="title-short" font-style="italic" text-case="title"/>
+                        <text variable="title" form="short" font-style="italic" text-case="title"/>
                     </else>
                 </choose>
             </else-if>
-            <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. &#187;" suffix="&#171;" variable="title-short" text-case="title"/>
-            </else-if>
             <else>
-                <text prefix="&#187;" suffix="&#171;" variable="title-short" text-case="title"/>
+                <text quotes="true" variable="title" form="short" text-case="title"/>
             </else>
         </choose>
     </macro>
@@ -414,14 +451,12 @@
                             <text term="ibid"/>
                         </else-if>
                         <else-if position="subsequent">
-                            <text macro="author"/>
+                            <text macro="author-short"/>
+                            <text macro="short-title"/>
                             <choose>
-                                <if variable="title-short">
-                                    <text macro="short-title"/>
+                                <if type="manuscript">
+                                    <text variable="call-number"/>
                                 </if>
-                                <else>
-                                    <text macro="title"/>
-                                </else>
                             </choose>
                             <text macro="locator-page"/>
                         </else-if>
