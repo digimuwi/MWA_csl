@@ -1,0 +1,139 @@
+== mono (book)
+first:      Matthew Gardner und Sara Springfeld, <i>Musikwissenschaftliches Arbeiten. Eine Einführung</i>, Kassel 2014 (Bärenreiter Studienbücher Musik, 19).
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Matthew Gardner und Sara Springfeld, <i>Musikwissenschaftliches Arbeiten</i>, S. 22.
+== mono2 (book)
+first:      Christoph Wolff, <i>Johann Sebastian Bach</i>, Frankfurt am Main <sup>3</sup>2005.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Christoph Wolff, <i>Johann Sebastian Bach</i>, S. 22.
+== sammel (book)
+first:      Annette Kreutziger-Herr und Melanie Unseld (Hrsg.), <i>Musik und Gender</i>, Kassel 2010.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Annette Kreutziger-Herr und Melanie Unseld (Hrsg.), <i>Musik und Gender</i>, S. 22.
+== multivol (book)
+first:      August Wilhelm Ambros, <i>Geschichte der Musik</i>, 5 Bde., Leipzig 1862.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: August Wilhelm Ambros, <i>Geschichte der Musik</i>, S. 22.
+== ebook (book)
+first:      Jane Doe, <i>Music Theory for Beginners</i>, London 2019, Kindle Edition, https://example.org/book, abgerufen am 18.11.2024.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Jane Doe, <i>Music Theory for Beginners</i>, S. 22.
+== diss (thesis)
+first:      Max Muster, <i>Studien zur Fuge</i>, Diss. Universität Heidelberg, 2003.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Max Muster, <i>Studien zur Fuge</i>, S. 22.
+== mgg (entry-encyclopedia)
+first:      Friedhelm Krummacher, Art. »Fuge«, in: <i>Die Musik in Geschichte und Gegenwart</i>, 2., neubearbeitete Ausgabe, hrsg. von Ludwig Finscher, Sachteil, Bd. 3, Kassel 1995, Sp. 1101-1145.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Friedhelm Krummacher, Art. »Fuge«, S. 22.
+== anon-lex (entry-encyclopedia)
+first:      Art. »Fuge«, in: <i>Riemann Musiklexikon. Sachteil</i>, hrsg. von Hans Heinrich Eggebrecht, Mainz 1967, S. 312–315.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Art. »Fuge«, S. 22.
+== gmo (entry-encyclopedia)
+first:      Paul M. Walker, Art. »Fugue«, in: <i>Grove Music Online</i>, https://doi.org/10.1093/gmo/9781561592630.article.51678, abgerufen am 18.11.2024.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Paul M. Walker, Art. »Fugue«, S. 22.
+== chapter (chapter)
+first:      Anna Autor, »Zur Rezeption«, in: <i>Musik und Gender</i>, hrsg. von Annette Kreutziger-Herr und Melanie Unseld, Kassel 2010 (Reihe, 3), S. 12–34.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Anna Autor, »Zur Rezeption«, S. 22.
+== anon-chapter (chapter)
+first:      »Vorwort«, in: <i>Festschrift für Hans Muster</i>, Laaber 1999, V–VII.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: »Vorwort«, S. 22.
+== conf (paper-conference)
+first:      Karl Konf, »Bach und die Fuge«, in: <i>Bericht über den Internationalen Musikwissenschaftlichen Kongress Leipzig 2000</i>, hrsg. von Hanna Hrsg, Kassel 2002, S. 100–110.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Karl Konf, »Bach und die Fuge«, S. 22.
+== journal (article-journal)
+first:      Zora Zeit, »Über die Fuge«, in: <i>AfMw</i> 60/2 (2003), S. 101–120.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Zora Zeit, »Über die Fuge«, S. 22.
+== journal-doi (article-journal)
+first:      Olga Online, »Online-Aufsatz«, in: <i>Zeitschrift der Gesellschaft für Musiktheorie</i> 18/1 (2021), https://doi.org/10.31751/1188, abgerufen am 18.11.2024, S. 7–30.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Olga Online, »Online-Aufsatz«, S. 22.
+== news (article-newspaper)
+first:      Kurt Kritik, »Ein Konzertbericht«, in: <i>Frankfurter Allgemeine Zeitung</i>, 1.2.2020, S. 12.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Kurt Kritik, »Ein Konzertbericht«, S. 22.
+== mag (article-magazine)
+first:      Mia Magazin, »Interview mit einer Dirigentin«, in: <i>Der Spiegel</i>, 6.3.2021, S. 120–122.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Mia Magazin, »Interview mit einer Dirigentin«, S. 22.
+== web (webpage)
+first:      Wilma Web, »Projektseite«, <i>Digitale Musikwissenschaft</i>, https://example.org/projekt, letzte Änderung 4.5.2023, abgerufen am 18.11.2024.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Wilma Web, »Projektseite«, S. 22.
+== blog (post-weblog)
+first:      Bert Blog, »Ein Blogbeitrag«, <i>Musikblog</i>, https://example.org/blog/1, gepostet am 9.1.2022, abgerufen am 18.11.2024.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Bert Blog, »Ein Blogbeitrag«, S. 22.
+== ms (manuscript)
+first:      Johann Sebastian Bach, <i>Messe in h-Moll BWV 232</i>, Autograph, Kaspar Kopist, 1749, D-B Mus.ms. Bach P 180.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Johann Sebastian Bach, <i>h-Moll-Messe</i>, S. 22.
+== cd (song)
+first:      Johann Sebastian Bach, <i>Goldberg-Variationen BWV 988</i>, Glenn Gould und Yo-Yo Ma, Sony Classical, 1982, CD (The Glenn Gould Edition, 3).
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Johann Sebastian Bach, <i>Goldberg-Variationen BWV 988</i>, S. 22.
+== track (song)
+first:      Johann Sebastian Bach, »Aria«, auf: <i>Goldberg-Variationen BWV 988</i>, Glenn Gould, Sony Classical, 1982, CD.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Johann Sebastian Bach, »Aria«, auf: <i>Goldberg-Variationen BWV 988</i>, S. 22.
+== img (graphic)
+first:      Joseph Karl Stieler, <i>Bildnis Beethoven</i>, Öl auf Leinwand, München 1820, 62 × 50 cm, Beethoven-Haus Bonn, https://example.org/img, abgerufen am 18.11.2024.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Joseph Karl Stieler, <i>Bildnis Beethoven</i>, S. 22.
+== beet (book)
+first:      Ludwig van Beethoven, <i>Briefwechsel. Gesamtausgabe</i>, hrsg. von Sieghard Brandenburg, Bd. 1, München 1996.
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Ludwig van Beethoven, <i>Briefwechsel. Gesamtausgabe</i>, S. 22.
+== bibliography
+Ambros, August Wilhelm, <i>Geschichte der Musik</i>, 5 Bde., Leipzig 1862.
+Autor, Anna, »Zur Rezeption«, in: <i>Musik und Gender</i>, hrsg. von Annette Kreutziger-Herr und Melanie Unseld, Kassel 2010 (Reihe, 3), S. 12–34.
+Bach, Johann Sebastian, <i>Messe in h-Moll BWV 232</i>, Autograph, Kaspar Kopist, 1749, D-B Mus.ms. Bach P 180.
+Bach, Johann Sebastian, »Aria«, auf: <i>Goldberg-Variationen BWV 988</i>, Glenn Gould, Sony Classical, 1982, CD.
+Bach, Johann Sebastian, <i>Goldberg-Variationen BWV 988</i>, Glenn Gould und Yo-Yo Ma, Sony Classical, 1982, CD (The Glenn Gould Edition, 3).
+Blog, Bert, »Ein Blogbeitrag«, <i>Musikblog</i>, https://example.org/blog/1, gepostet am 9.1.2022, abgerufen am 18.11.2024.
+Doe, Jane, <i>Music Theory for Beginners</i>, London 2019, Kindle Edition, https://example.org/book, abgerufen am 18.11.2024.
+Art. »Fuge«, in: <i>Riemann Musiklexikon. Sachteil</i>, hrsg. von Hans Heinrich Eggebrecht, Mainz 1967, S. 312–315.
+Gardner, Matthew und Springfeld, Sara, <i>Musikwissenschaftliches Arbeiten. Eine Einführung</i>, Kassel 2014 (Bärenreiter Studienbücher Musik, 19).
+Konf, Karl, »Bach und die Fuge«, in: <i>Bericht über den Internationalen Musikwissenschaftlichen Kongress Leipzig 2000</i>, hrsg. von Hanna Hrsg, Kassel 2002, S. 100–110.
+Kreutziger-Herr, Annette und Unseld, Melanie (Hrsg.), <i>Musik und Gender</i>, Kassel 2010.
+Kritik, Kurt, »Ein Konzertbericht«, in: <i>Frankfurter Allgemeine Zeitung</i>, 1.2.2020, S. 12.
+Krummacher, Friedhelm, Art. »Fuge«, in: <i>Die Musik in Geschichte und Gegenwart</i>, 2., neubearbeitete Ausgabe, hrsg. von Ludwig Finscher, Sachteil, Bd. 3, Kassel 1995, Sp. 1101-1145.
+Magazin, Mia, »Interview mit einer Dirigentin«, in: <i>Der Spiegel</i>, 6.3.2021, S. 120–122.
+Muster, Max, <i>Studien zur Fuge</i>, Diss. Universität Heidelberg, 2003.
+Online, Olga, »Online-Aufsatz«, in: <i>Zeitschrift der Gesellschaft für Musiktheorie</i> 18/1 (2021), https://doi.org/10.31751/1188, abgerufen am 18.11.2024, S. 7–30.
+Stieler, Joseph Karl, <i>Bildnis Beethoven</i>, Öl auf Leinwand, München 1820, 62 × 50 cm, Beethoven-Haus Bonn, https://example.org/img, abgerufen am 18.11.2024.
+van Beethoven, Ludwig, <i>Briefwechsel. Gesamtausgabe</i>, hrsg. von Sieghard Brandenburg, Bd. 1, München 1996.
+»Vorwort«, in: <i>Festschrift für Hans Muster</i>, Laaber 1999, V–VII.
+Walker, Paul M., Art. »Fugue«, in: <i>Grove Music Online</i>, https://doi.org/10.1093/gmo/9781561592630.article.51678, abgerufen am 18.11.2024.
+Web, Wilma, »Projektseite«, <i>Digitale Musikwissenschaft</i>, https://example.org/projekt, letzte Änderung 4.5.2023, abgerufen am 18.11.2024.
+Wolff, Christoph, <i>Johann Sebastian Bach</i>, Frankfurt am Main <sup>3</sup>2005.
+Zeit, Zora, »Über die Fuge«, in: <i>AfMw</i> 60/2 (2003), S. 101–120.

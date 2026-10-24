@@ -4,4 +4,4 @@ Exportierte Einträge.json
 **/*.out
 **/*.toc
 **/build.bat
-
+test/node_modules/

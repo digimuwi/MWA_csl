@@ -75,7 +75,7 @@ Nutzen Sie **Zeitschriftenartikel** als Eintragsart.
 | **Publikation** | Hier tragen Sie den Namen der Zeitschrift ein … |
 | **Band** | … hier den Jahrgang ein | 
 | **Ausgabe** | … und hier das Heft | 
-| **Zeitschriftenabkürzung** | Es ist bei bekannten und oft zitierten Zeitschriften sinnvoll, dieses Feld zu setzen. Eine Übersicht über geläufige Abkürzungen finden Sie im ersten Band der MGG2. | 
+| **Zeitschriftenabkürzung** | Es ist bei bekannten und oft zitierten Zeitschriften sinnvoll, dieses Feld zu setzen. Ist es gesetzt, wird die Abkürzung anstelle des vollen Titels ausgegeben. Eine Übersicht über geläufige Abkürzungen finden Sie im ersten Band der MGG2. | 
 | **DOI** | Bei Onlinezeitschriften sollten Sie hier die DOI des Aufsatzes eintragen, also z. B. `10.31751/1188`. Beim Zitieren wird automatisch ein vollständiger Link ergänzt. |
 | **URL** | Sofern eine DOI gesetzt ist, wird dieses Feld beim Zitieren ignoriert. Es ist nur relevant, wenn keine DOI verknüpft ist. |
 

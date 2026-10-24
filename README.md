@@ -4,6 +4,18 @@ A CSL-file for automatic citation in Zotero using the referencing style of: Matt
 ## CSL Validation
 The correctness of the presented CSL is to be validated via [validator.citationstyles.org](https://validator.citationstyles.org/), recommended by [Zotero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step), following the CSL specification of [citationstyles.org](https://citationstyles.org/) (links accessed 2024-11-18).
 
+## Tests
+`test/` renders a set of sample items (`test/items.json`, one per supported item type) with [citeproc-js](https://github.com/Juris-M/citeproc-js), the CSL processor used by Zotero, and compares footnotes and bibliography with `test/expected.txt`. Run it after every change to the style:
+
+```sh
+cd test
+npm install
+npm test          # shows every line that differs from expected.txt
+npm run update    # accept the new output as expected.txt
+```
+
+Review the diff of `expected.txt` before committing: it shows exactly how the change affects the output.
+
 ## Contributors
 - [@JuliusHauth](https://github.com/JuliusHauth)
 - [@thomasxhua](https://github.com/thomasxhua)
@@ -38,6 +50,7 @@ The expected scope of the CSL follows the citation categories defined by Gardner
       - `Titel des Wörterbuchs` sollte dann automatisch korrekt Titel des Lexikons sein
       - `Herausgeber` sind die Editoren
       - wichtig: Autor als `Autor` hinzufügen
+      - Artikel ohne Autor beginnen mit dem Titel, die Herausgeber stehen dann hinter dem Lexikontitel (`hrsg. von`)
     - [x] Lexikon
     - [x] MGG2
       - bei `Auflage`: `2., neubearbeitete Ausgabe` eintragen
@@ -52,12 +65,15 @@ The expected scope of the CSL follows the citation categories defined by Gardner
   - [x] Aufsätze in Sammelpublikationen
     - Bei Aufsätzen etc., wenn kein `Art.` gewünscht, `Buchteil` auswählen (sonst `Wörterbucheintrag`)
   - [x] Aufsätze in Kongressberichten
+    - als `Konferenzpaper` (Titel und Ort des Kongresses gehören in den Titel des Konferenzbandes), Ausgabe wie Aufsätze in Sammelpublikationen
   - [x] Aufsätze in Festschriften
   - [x] Aufsätze in wissenschaftlichen Zeitschriften oder Jahrbüchern
     - als `Zeitschriftenartikel`
+    - ist `Zeitschriftenabkürzung` gesetzt (z.B. `AfMw`), wird die Abkürzung statt des vollen Titels ausgegeben
   - [x] Artikel in Zeitungen oder Magazinen
     - `Zeitungsartikel` (Achtung, nicht `Zeitschriftenartikel`)
       - Name der Zeitung: `Publikation`
+    - `Magazinartikel` wird genauso ausgegeben
   - [x] Textteile aus Notenausgaben
     - Anlage z.B. als `Buch` empfohlen
 - [x] Internetinhalte
@@ -168,6 +184,6 @@ The following section is relevant for users of the CSL, since they have to be ap
 ### Misc. TODOs
 - check page sections / only 1 page / etc. (citation and bibliography)
 - check "Kurzform"
-- `DOI` field
-- spätere `n`-te Auflage als Hochzahl `<sup>n</sup>YYYY`
+- [x] `DOI` field
+- [x] spätere `n`-te Auflage als Hochzahl `<sup>n</sup>YYYY`
 - Mini-Guide (was ist wo einzutragen, wie ist mit richtigen/schlechten Imports umgehen, ...)
