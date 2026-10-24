@@ -151,14 +151,19 @@ class="header-section-number">2.1.1</span> Bücher</h3>
 <td style="text-align: left;"><em>Autor</em></td>
 <td style="text-align: left;">Vor- und Nachname sollten getrennt
 eingegeben werden. Mit dem <code>+</code>-Knopf rechts können Sie
-mehrere Autoren angeben.</td>
+mehrere Autoren angeben. Namenszusätze wie “van” oder “di” gehören ins
+Feld für den Vornamen (“Ludwig van”). Dann erscheint im
+Literaturverzeichnis “Beethoven, Ludwig van” und in der Kurzform
+“Beethoven”.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><em>Titel</em></td>
 <td style="text-align: left;">Achten Sie darauf, Titel und Untertitel
 mit einem Punkt zu trennen und englische Titel im Title Case anzugeben.
 Sie können unter dem <code>...</code>-Knopf Titel automatisch in Title
-Case umformen.</td>
+Case umformen. Anführungszeichen innerhalb des Titels geben Sie als
+gerade Anführungszeichen (Umschalt + 2) ein, sie werden dann als ›…‹
+ausgegeben.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><em>Ort</em></td>
@@ -213,10 +218,49 @@ Universität ein, bei der Arbeit eingereicht wurde.</td>
 </div>
 <h3 data-number="2.1.4" id="reprints"><span
 class="header-section-number">2.1.4</span> Reprints</h3>
-<p>Reprints lassen sich momentan in Zotero nicht vollständig abbilden.
-Als Workaround können Sie das Feld <em>Auflage</em> nutzen, um
-Informationen zum Reprint einzugeben, z. B. “Faksimile-Nachdruck unter
-dem Titel Musikalisches Lexikon”.</p>
+<p>Eintragsart: <em>Buch</em>.</p>
+<div class="flushleft">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feld</th>
+<th style="text-align: left;">Anmerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>Ursprünglicher Ort</em></td>
+<td style="text-align: left;">Ort der Originalausgabe, z. B.
+“Leipzig”.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Ursprüngliches Datum</em></td>
+<td style="text-align: left;">Jahr der Originalausgabe, z. B.
+“1732”.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Ort</em>, <em>Datum</em></td>
+<td style="text-align: left;">Ort und Jahr des Nachdrucks.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Auflage</em></td>
+<td style="text-align: left;">Art des Nachdrucks, z. B.
+“Faksimile-Nachdruck unter dem Titel <code>&lt;i&gt;</code>Musikalisches
+Lexikon<code>&lt;/i&gt;</code>”. Was zwischen <code>&lt;i&gt;</code> und
+<code>&lt;/i&gt;</code> steht, wird kursiv ausgegeben.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Herausgeber</em></td>
+<td style="text-align: left;">Herausgeber des Nachdrucks.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fehlen die Felder <em>Ursprünglicher Ort</em> und <em>Ursprüngliches
+Datum</em> in Ihrer Zotero-Version, tragen Sie stattdessen im Feld
+<em>Extra</em> zwei Zeilen ein:
+<code>original-publisher-place: Leipzig</code> und
+<code>original-date: 1732</code>.</p>
 <h2 data-number="2.2" id="unselbstständige-publikationen"><span
 class="header-section-number">2.2</span> Unselbstständige
 Publikationen</h2>
@@ -278,7 +322,10 @@ also z. B. “Sachteil, Bd. 5”</td>
 <td style="text-align: left;">Geben Sie hier die Spaltenzahlen mit dem
 Zusatz “Sp.” ein. Zotero erkennt, dass es sich um eine nicht-numerische
 Seitenzahl handelt und wird den ansonsten automatischen Zusatz “S. […]”
-weglassen.</td>
+weglassen. Den Strich zwischen den Spaltenzahlen geben Sie in diesem
+Fall als Halbgeviertstrich ein (“Sp. 347–418”). Wenn Sie in der Fußnote
+die Stelle mit der Bezeichnung “Spalte” zitieren, erscheint dort
+“Sp.”.</td>
 </tr>
 </tbody>
 </table>
@@ -314,7 +361,7 @@ Sammelpublikationen</h3>
 <h3 data-number="2.2.4" id="aufsätze-in-kongressberichten"><span
 class="header-section-number">2.2.4</span> Aufsätze in
 Kongressberichten</h3>
-<p>Nutzen Sie <em>Konferenzpaper</em> als Eintragsart. Informationen zu
+<p>Nutzen Sie <em>Konferenz-Paper</em> als Eintragsart. Informationen zu
 Titel und Ort des Kongresses nehmen in den Titel des Konferenzbandes
 auf, <strong>nicht</strong> in die separat dafür vorgesehenen
 Felder.</p>
@@ -404,6 +451,53 @@ den zweiten Teil der Angabe, z. B.:</p>
 <p>Brief von Unger an Graf Esterhazy, Wien, 20. August 1820, zitiert
 nach: [hier Briefausgabe hier mit Zotero einfügen].</p>
 </div>
+<h2 data-number="2.3" id="noten"><span
+class="header-section-number">2.3</span> Noten</h2>
+<h3 data-number="2.3.1" id="notenausgaben-und-gesamtausgaben"><span
+class="header-section-number">2.3.1</span> Notenausgaben und
+Gesamtausgaben</h3>
+<p>Eintragsart: <em>Buch</em>.</p>
+<div class="flushleft">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feld</th>
+<th style="text-align: left;">Anmerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>Autor</em></td>
+<td style="text-align: left;">Komponist.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Titel</em></td>
+<td style="text-align: left;">Titel mit Opus- oder
+Werkverzeichnisnummer, z. B. “Tapiola. Sinfonische Dichtung für
+Orchester op. 112”.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Auflage</em></td>
+<td style="text-align: left;">Art der Ausgabe, z. B. “Partitur”,
+“Studienpartitur” oder “Klavierauszug”. Sie erscheint nach dem
+Titel.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Herausgeber</em></td>
+<td style="text-align: left;">Herausgeber der Ausgabe.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Reihe</em>, <em>Nummer der
+Reihe</em></td>
+<td style="text-align: left;">Bei Gesamtausgaben deren Titel und Band,
+z. B. “A/18”.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Vorworte und Kritische Berichte haben oft römische Seitenzahlen.
+Zitieren Sie die Stelle in der Fußnote als Seite, z. B. “VI-XXI”,
+erscheint “S. VI–XXI”.</p>
 <a class="project-link" href="" target="_blank">zur Anwendung</a>
 <a class="project-link" href="https://www.digimuwi.uni-tuebingen.de/start/projects/">zurück zur Projektübersicht</a>
 </div>
