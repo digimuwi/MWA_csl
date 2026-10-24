@@ -23,6 +23,11 @@ first:      August Wilhelm Ambros, <i>Geschichte der Musik</i>, 5 Bde., Leipzig 
 ibid:       Ebd.
 ibid+loc:   Ebd., S. 18–21.
 subseq+loc: Ambros, <i>Geschichte der Musik</i>, S. 22.
+== reprint (book)
+first:      Johann Gottfried Walther, <i>Musicalisches Lexicon oder Musicalische Bibliothec</i>, Leipzig 1732, Faksimile-Nachdruck unter dem Titel <i>Musikalisches Lexikon oder musikalische Bibliothek</i>, hrsg. von Richard Schaal, Kassel 1953 (Documenta musicologica, Erste Reihe: Druckschriften-Faksimiles, 3).
+ibid:       Ebd.
+ibid+loc:   Ebd., S. 18–21.
+subseq+loc: Walther, <i>Musicalisches Lexicon</i>, S. 22.
 == ebook (book)
 first:      Jane Doe, <i>Music Theory for Beginners</i>, London 2019, Kindle Edition, https://example.org/book, abgerufen am 18.11.2024.
 ibid:       Ebd.
@@ -152,6 +157,7 @@ Online, Olga, »Online-Aufsatz«, in: <i>Zeitschrift der Gesellschaft für Musik
 Stieler, Joseph Karl, <i>Bildnis Beethoven</i>, Öl auf Leinwand, München 1820, 62 × 50 cm, Beethoven-Haus Bonn, https://example.org/img, abgerufen am 18.11.2024.
 »Vorwort«, in: <i>Festschrift für Hans Muster</i>, Laaber 1999, V–VII.
 Walker, Paul M., Art. »Fugue«, in: <i>Grove Music Online</i>, https://doi.org/10.1093/gmo/9781561592630.article.51678, abgerufen am 18.11.2024.
+Walther, Johann Gottfried, <i>Musicalisches Lexicon oder Musicalische Bibliothec</i>, Leipzig 1732, Faksimile-Nachdruck unter dem Titel <i>Musikalisches Lexikon oder musikalische Bibliothek</i>, hrsg. von Richard Schaal, Kassel 1953 (Documenta musicologica, Erste Reihe: Druckschriften-Faksimiles, 3).
 Web, Wilma, »Projektseite«, <i>Digitale Musikwissenschaft</i>, https://example.org/projekt, letzte Änderung 4.5.2023, abgerufen am 18.11.2024.
 Wolff, Christoph, <i>Johann Sebastian Bach</i>, Frankfurt am Main <sup>3</sup>2005.
 Zeit, Zora, »Über die Fuge«, in: <i>AfMw</i> 60/2 (2003), S. 101–120.

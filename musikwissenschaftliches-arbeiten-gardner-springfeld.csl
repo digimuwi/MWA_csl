@@ -232,6 +232,13 @@
             <if type="chapter book entry-dictionary entry-encyclopedia paper-conference">
                 <group delimiter=", ">
                     <text macro="book-journal-title"/>
+                    <!-- reprints: place and year of the original edition -->
+                    <group delimiter=" ">
+                        <text variable="original-publisher-place"/>
+                        <date variable="original-date">
+                            <date-part name="year"/>
+                        </date>
+                    </group>
 
                     <!-- non-numeric edition, e.g. "zweite und verbesserte Auflage" -->
                     <choose>
