@@ -63,7 +63,7 @@
         </choose>
     </macro>
     <macro name="author">
-        <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
+        <!-- ALWAYS KEEP IN MIND THAT "author", "author-bibliography" and "author-short" should be in sync!-->
         <choose>
             <if type="song">
                 <names variable="composer">
@@ -88,7 +88,7 @@
         </choose>
     </macro>
     <macro name="author-bibliography">
-        <!-- ALWAYS KEEP IN MIND THAT "author" and "author-bibliography" should be in sync!-->
+        <!-- ALWAYS KEEP IN MIND THAT "author", "author-bibliography" and "author-short" should be in sync!-->
         <choose>
             <if type="song">
                 <names variable="composer">
@@ -106,6 +106,31 @@
                     <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
                         <names variable="editor" suffix=" (Hrsg.)">
                             <name delimiter=", " and="text" delimiter-precedes-last="never" name-as-sort-order="all"/>
+                        </names>
+                    </else-if>
+                </choose>
+            </else>
+        </choose>
+    </macro>
+    <macro name="author-short">
+        <!-- ALWAYS KEEP IN MIND THAT "author", "author-bibliography" and "author-short" should be in sync!-->
+        <choose>
+            <if type="song">
+                <names variable="composer">
+                    <name delimiter=", " and="text" delimiter-precedes-last="never" form="short"/>
+                </names>
+            </if>
+            <else>
+                <choose>
+                    <if variable="author">
+                        <names variable="author">
+                            <name delimiter=", " and="text" delimiter-precedes-last="never" form="short"/>
+                        </names>
+                    </if>
+                    <!-- [1] When including "editor" in the author section, they must be excluded in the "editor" macro -->
+                    <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="none">
+                        <names variable="editor" suffix=" (Hrsg.)">
+                            <name delimiter=", " and="text" delimiter-precedes-last="never" form="short"/>
                         </names>
                     </else-if>
                 </choose>
@@ -362,25 +387,23 @@
     </macro>
     <macro name="short-title">
         <!-- ALWAYS KEEP IN MIND THAT "title" and "short-title" should be in sync!-->
+        <!-- form="short" falls back to the full title; Gardner/Springfeld drop "Art." here (p. 269 f.) -->
         <choose>
             <if type="book thesis manuscript graphic">
-                <text variable="title-short" font-style="italic" text-case="title"/>
+                <text variable="title" form="short" font-style="italic" text-case="title"/>
             </if>
             <else-if type="song">
                 <choose>
                     <if variable="event-place">
-                        <text quotes="true" variable="title-short" text-case="title"/>
+                        <text quotes="true" variable="title" form="short" text-case="title"/>
                     </if>
                     <else>
-                        <text variable="title-short" font-style="italic" text-case="title"/>
+                        <text variable="title" form="short" font-style="italic" text-case="title"/>
                     </else>
                 </choose>
             </else-if>
-            <else-if type="entry-dictionary entry-encyclopedia">
-                <text prefix="Art. " quotes="true" variable="title-short" text-case="title"/>
-            </else-if>
             <else>
-                <text quotes="true" variable="title-short" text-case="title"/>
+                <text quotes="true" variable="title" form="short" text-case="title"/>
             </else>
         </choose>
     </macro>
@@ -421,14 +444,12 @@
                             <text term="ibid"/>
                         </else-if>
                         <else-if position="subsequent">
-                            <text macro="author"/>
+                            <text macro="author-short"/>
+                            <text macro="short-title"/>
                             <choose>
-                                <if variable="title-short">
-                                    <text macro="short-title"/>
+                                <if type="manuscript">
+                                    <text variable="call-number"/>
                                 </if>
-                                <else>
-                                    <text macro="title"/>
-                                </else>
                             </choose>
                             <text macro="locator-page"/>
                         </else-if>
