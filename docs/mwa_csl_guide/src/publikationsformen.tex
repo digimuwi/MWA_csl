@@ -5,8 +5,8 @@
 \subsubsection{Bücher}
 Eintragsart: \textit{Buch}.
 \pubtable{
-\textit{Autor}&Vor- und Nachname sollten getrennt eingegeben werden. Mit dem \verb|+|-Knopf rechts können Sie mehrere Autoren angeben.\\
-\textit{Titel}&Achten Sie darauf, Titel und Untertitel mit einem Punkt zu trennen und englische Titel im Title Case anzugeben. Sie können unter dem \verb|...|-Knopf Titel automatisch in Title Case umformen.\\
+\textit{Autor}&Vor- und Nachname sollten getrennt eingegeben werden. Mit dem \verb|+|-Knopf rechts können Sie mehrere Autoren angeben. Namenszusätze wie "`van"' oder "`di"' gehören ins Feld für den Vornamen ("`Ludwig van"'). Dann erscheint im Literaturverzeichnis "`Beethoven, Ludwig van"' und in der Kurzform "`Beethoven"'.\\
+\textit{Titel}&Achten Sie darauf, Titel und Untertitel mit einem Punkt zu trennen und englische Titel im Title Case anzugeben. Sie können unter dem \verb|...|-Knopf Titel automatisch in Title Case umformen. Anführungszeichen innerhalb des Titels geben Sie als gerade Anführungszeichen (Umschalt + 2) ein, sie werden dann als ›\ldots‹ ausgegeben.\\
 \textit{Ort}\\
 \textit{Datum}&Tragen Sie hier das Jahr ein\\
 \textit{Auflage}&Geben Sie hier lediglich eine Zahl ein, so wird diese als hochgestellte Zahl vor dem Jahr ausgegeben. Bei weiteren Informationen (z. B. "`zweite und verbesserte Auflage"') werden diese als eigenständiger Text ausgegeben.
@@ -20,7 +20,15 @@ Eintragsart: \textit{Dissertation}.
 \textit{Universität}&Geben Sie hier die Hochschule oder Universität ein, bei der Arbeit eingereicht wurde.
 }
 \subsubsection{Reprints}
-Reprints lassen sich momentan in Zotero nicht vollständig abbilden. Als Workaround können Sie das Feld \textit{Auflage} nutzen, um Informationen zum Reprint einzugeben, z. B. "`Faksimile-Nachdruck unter dem Titel Musikalisches Lexikon"'.
+Eintragsart: \textit{Buch}.
+\pubtable{
+\textit{Ursprünglicher Ort}&Ort der Originalausgabe, z. B. "`Leipzig"'.\\
+\textit{Ursprüngliches Datum}&Jahr der Originalausgabe, z. B. "`1732"'.\\
+\textit{Ort}, \textit{Datum}&Ort und Jahr des Nachdrucks.\\
+\textit{Auflage}&Art des Nachdrucks, z. B. "`Faksimile-Nachdruck unter dem Titel \texttt{<i>}Musikalisches Lexikon\texttt{</i>}"'. Was zwischen \texttt{<i>} und \texttt{</i>} steht, wird kursiv ausgegeben.\\
+\textit{Herausgeber}&Herausgeber des Nachdrucks.
+}
+Fehlen die Felder \textit{Ursprünglicher Ort} und \textit{Ursprüngliches Datum} in Ihrer Zotero-Version, tragen Sie stattdessen im Feld \textit{Extra} zwei Zeilen ein: \texttt{original-publisher-place: Leipzig} und \texttt{original-date: 1732}.
 \subsection{Unselbstständige Publikationen}
 %\subsubsection{Lexikonartikel}
 Eintragsart: \textit{Enzyklopädieartikel}.
@@ -34,7 +42,7 @@ Eintragsart: \textit{Enzyklopädieartikel}.
 \pubtable{
 \textit{Auflage}&"`2., neubearbeitete Ausgabe"'\\
 \textit{Band}&Tragen Sie hier auch den Teil der MGG ein, also z. B. "`Sachteil, Bd. 5"'\\
-\textit{Seiten}&Geben Sie hier die Spaltenzahlen mit dem Zusatz "`Sp."' ein. Zotero erkennt, dass es sich um eine nicht-numerische Seitenzahl handelt und wird den ansonsten automatischen Zusatz "`S. [\ldots]"' weglassen.
+\textit{Seiten}&Geben Sie hier die Spaltenzahlen mit dem Zusatz "`Sp."' ein. Zotero erkennt, dass es sich um eine nicht-numerische Seitenzahl handelt und wird den ansonsten automatischen Zusatz "`S. [\ldots]"' weglassen. Den Strich zwischen den Spaltenzahlen geben Sie in diesem Fall als Halbgeviertstrich ein ("`Sp. 347--418"'). Wenn Sie in der Fußnote die Stelle mit der Bezeichnung "`Spalte"' zitieren, erscheint dort "`Sp."'.
 }
 \subsubsection*{NG2}
 \pubtable{
@@ -45,7 +53,7 @@ Lassen Sie die Felder \textit{Ort} und \textit{Datum} leer und nutzen Sie stattd
 \subsubsection{Aufsätze in Sammelpublikationen}\label{aufsaetze_in_sammelpublikationen}
 Nutzen Sie \textit{Buchteil} als Eintragsart. 
 \subsubsection{Aufsätze in Kongressberichten}
-Nutzen Sie \textit{Konferenzpaper} als Eintragsart. Informationen zu Titel und Ort des Kongresses nehmen in den Titel des Konferenzbandes auf, \textbf{nicht} in die separat dafür vorgesehenen Felder.
+Nutzen Sie \textit{Konferenz-Paper} als Eintragsart. Informationen zu Titel und Ort des Kongresses nehmen in den Titel des Konferenzbandes auf, \textbf{nicht} in die separat dafür vorgesehenen Felder.
 \subsubsection{Aufsätze in Festschriften}
 Nutzen Sie die normale Form (siehe \nameref{aufsaetze_in_sammelpublikationen}). % label and Link the alternative
 \subsubsection{Aufsätze in wissenschaftlichen Zeitschriften oder Jahrbüchern}
@@ -69,4 +77,15 @@ Nehmen Sie hier nur die Briefausgabe oder Dokumentensammlung selbst in Zotero au
 \begin{displayquote}
 Brief von Unger an Graf Esterhazy, Wien, 20. August 1820, zitiert nach: [hier Briefausgabe hier mit Zotero einfügen].
 \end{displayquote}
+\subsection{Noten}
+\subsubsection{Notenausgaben und Gesamtausgaben}
+Eintragsart: \textit{Buch}.
+\pubtable{
+\textit{Autor}&Komponist.\\
+\textit{Titel}&Titel mit Opus- oder Werkverzeichnisnummer, z. B. "`Tapiola. Sinfonische Dichtung für Orchester op. 112"'.\\
+\textit{Auflage}&Art der Ausgabe, z. B. "`Partitur"', "`Studienpartitur"' oder "`Klavierauszug"'. Sie erscheint nach dem Titel.\\
+\textit{Herausgeber}&Herausgeber der Ausgabe.\\
+\textit{Reihe}, \textit{Nummer der Reihe}&Bei Gesamtausgaben deren Titel und Band, z. B. "`A/18"'.
+}
+Vorworte und Kritische Berichte haben oft römische Seitenzahlen. Zitieren Sie die Stelle in der Fußnote als Seite, z. B. "`VI-XXI"', erscheint "`S. VI--XXI"'.
 %
